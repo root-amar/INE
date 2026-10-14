@@ -65,8 +65,3 @@ Welcome to your central hands-on lab tracker for **INE Security & Certification 
 - [ ] 32-bit Linux & Windows Stack-Based Buffer Overflows
 - [ ] Bad Characters Identification & Finding Return Addresses (JMP ESP)
 - [ ] Custom Shellcoding & Exploit Weaponization
-
-<br>
-
----
-*Tip: Use the `template.md` file to maintain a consistent format for your walkthroughs.*
