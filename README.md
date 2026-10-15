@@ -8,8 +8,8 @@ Welcome to your central hands-on lab tracker for **INE Security & Certification 
 
 | Metric | Count | Details |
 | :--- | :---: | :--- |
-| **Total Labs Completed** | **2** | 100% flag capture rate |
-| **Total Flags Captured** | **9** | 5 in CTF 1, 4 in CTF 2 |
+| **Total Labs Completed** | **3** | 100% flag capture rate |
+| **Total Flags Captured** | **13** | 5 in CTF 1, 4 in CTF 2, 4 in CTF 3 |
 | **Active Focus Path** | **eCPPT / Assessment Methodologies** | Information Gathering, Reconnaissance, Footprinting |
 
 <br>
@@ -22,6 +22,7 @@ Welcome to your central hands-on lab tracker for **INE Security & Certification 
 | :--- | :--- | :--- | :---: | :---: | :--- | :---: |
 | 2026-10-14 | Assessment Methodologies | Information Gathering CTF 1 | Easy / Medium | 5 / 5 | Robots.txt inspection, HTML meta generator analysis, DIRB wordlist fuzzing (`big.txt`), `.bak` backup file extraction (`wp-config.bak`), HTTrack site mirroring | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%201/README.md) |
 | 2026-10-14 | Assessment Methodologies | Information Gathering CTF 2 | Easy / Medium | 4 / 4 | HTTP server banner disclosure, hidden paths via robots.txt, vsftpd anonymous access & credential extraction, MySQL database enumeration | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%202/README.md) |
+| 2026-10-15 | Assessment Methodologies | Information Gathering CTF 3 | Intermediate | 4 / 4 | Samba share fuzzing (`pubfiles`), Metasploit SID lookup & SMB brute-forcing (`josh:purple`), vsftpd banner analysis & Hydra cracking (`alice:pretty`), OpenSSH pre-login warning banner inspection | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%203/README.md) |
 
 <br>
 
@@ -32,6 +33,7 @@ Welcome to your central hands-on lab tracker for **INE Security & Certification 
 ### 🔍 1. Assessment Methodologies
 - [x] **Information Gathering CTF 1** *(5/5 Flags Captured)*
 - [x] **Information Gathering CTF 2** *(4/4 Flags Captured)*
+- [x] **Information Gathering CTF 3** *(4/4 Flags Captured)*
 - [ ] Footprinting & Reconnaissance
 - [ ] Scanning & Enumeration
 - [ ] Vulnerability Assessment & Nessus / OpenVAS Auditing
