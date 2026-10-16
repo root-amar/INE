@@ -1,14 +1,51 @@
-# 🛡️ INE Cybersecurity Certifications & Training Portfolio
+<div align="center">
 
-Welcome to my central hands-on cybersecurity repository documenting practical lab solutions, CTF challenges, and penetration testing methodologies across **INE (eLearnSecurity)** certification tracks.
+# 🛡️ INE Cybersecurity Certifications & eJPT Labs Portfolio
 
-This repository serves as a technical portfolio demonstrating practical competencies in network reconnaissance, vulnerability assessment, web application security, exploit methodologies, and professional security documentation.
+<p>
+  <b>Hands-on penetration testing laboratories, CTF walkthroughs, and vulnerability assessments across INE (eLearnSecurity) certification tracks.</b>
+</p>
+
+[![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
+[![Certification - eJPT v2](https://img.shields.io/badge/Certification-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
+[![Labs Completed - 4 / 4](https://img.shields.io/badge/Labs%20Completed-4%20%2F%204%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
+[![Flags Captured - 17 / 17](https://img.shields.io/badge/Flags%20Captured-17%20%2F%2017-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
+[![Methodology - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
+
+</div>
+
+---
+
+## 📌 Executive Summary
+
+Welcome to my central cybersecurity repository documenting practical lab solutions, CTF challenges, and offensive security assessments across **INE (eLearnSecurity)** certification paths.
+
+This portfolio serves as a technical showcase for practical competencies in:
+- **Network Reconnaissance & Host Fingerprinting** (Nmap, DIRB, Feroxbuster)
+- **Vulnerability Assessment & Configuration Auditing** (VCS leaks, phpMyAdmin, OpenSSL/SSH banners)
+- **Service Exploitation & Protocol Chaining** (vsftpd, Samba SMB, MySQL)
+- **Enterprise Defense & Remediation** (MITRE ATT&CK® mapping, CVSS v3.1 scoring, defensive hardening)
+
+<details>
+<summary><b>🔍 GitHub Repository SEO Metadata & Discovery Tags (Click to expand)</b></summary>
+<br>
+
+To ensure maximum discoverability by technical recruiters and penetration testing teams, this repository targets the following taxonomy:
+
+- **Repository Description:**
+  > *Complete hands-on lab solutions, technical walkthroughs, and vulnerability assessments for the INE Penetration Testing Student (PTS) and eLearnSecurity Junior Penetration Tester (eJPT v2) certification path.*
+
+- **Recommended GitHub Topics:**
+  `ejpt` • `ejptv2` • `ine-security` • `penetration-testing-student` • `ethical-hacking` • `ctf-walkthrough` • `vulnerability-assessment` • `mitre-attack` • `cvss-v3` • `network-reconnaissance` • `cybersecurity-portfolio` • `infosec` • `offensive-security`
+</details>
+
+<br>
 
 ---
 
 ## 🧭 Certification Tracks & Portfolio Directory
 
-The repository is modularly organized by certification paths to accommodate current coursework and future certifications:
+The repository is organized into modular directories representing distinct certification tracks:
 
 | Certification Track | Platform / Learning Path | Status | Labs Completed | Flags Captured | Primary Focus | Directory Link |
 | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
@@ -28,6 +65,7 @@ All coursework and technical write-ups are organized under their respective cert
 ```text
 INE/
 ├── README.md                                  # Root Portfolio Hub & Certification Index
+├── new-lab.ps1                                # Automated Lab Scaffolding Script
 ├── .gitignore                                 # Git ignore patterns
 │
 └── eJPT/                                      # eLearnSecurity Junior Penetration Tester Track
@@ -74,6 +112,8 @@ INE/
 
 Every technical write-up in this portfolio adheres to rigorous documentation standards:
 - **Scope & Mission Objectives:** Clear identification of targets, network scope, and authorization boundaries.
+- **MITRE ATT&CK® Mapping:** Threat actor tactics and techniques mapped to every reconnaissance and exploitation step.
+- **CVSS v3.1 Severity Scoring:** Quantitative vulnerability assessments to communicate real-world business risk.
 - **Reproducible Methodology:** Verifiable terminal commands, syntax breakdowns, and defensive remediation insights.
 - **Evidence & Verification:** Embedded visual proof including full terminal output, hashes, and tool outputs.
 - **Remediation & Hardening:** Practical defensive guidance for system administrators and developers to patch identified weaknesses.

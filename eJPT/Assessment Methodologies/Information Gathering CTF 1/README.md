@@ -1,29 +1,55 @@
 <div align="center">
+  <a href="../../README.md">⬅️ <b>Back to eJPT Track Hub</b></a> | <a href="../../../README.md">🏠 <b>Portfolio Root</b></a>
+</div>
+
+<br>
+
+<div align="center">
   <h1>🎯 Information Gathering — Skill Check Lab 1 Walkthrough 🎯</h1>
-  <p><b>Platform:</b> INE | <b>Learning Path:</b> Penetration Testing Student (eJPT) | <b>Course:</b> Assessment Methodologies: Information Gathering | <b>Challenge:</b> Skill Check 1</p>
+  <p><b>Platform:</b> INE Security | <b>Learning Path:</b> Penetration Testing Student (eJPT v2) | <b>Course:</b> Assessment Methodologies: Information Gathering | <b>Difficulty:</b> Easy / Medium</p>
   <p><i>Date Completed: 14 October 2026</i></p>
+
+[![Platform - INE](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=flat-square&logo=target)](https://ine.com/)
+[![Track - eJPT](https://img.shields.io/badge/Track-eJPT%20v2-orange?style=flat-square&logo=hackthebox)](../../README.md)
+[![Flags - 5/5](https://img.shields.io/badge/Flags%20Captured-5%20%2F%205-success?style=flat-square&logo=checkmarx)](./README.md)
+[![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-T1595%20%7C%20T1083-red?style=flat-square)](https://attack.mitre.org/)
 </div>
 
 ---
 
-## 📋 Objective
-> **Perform passive and active web reconnaissance against the target web application (`http://target.ine.local`). The goal is to uncover hidden information, inspect search engine directives, analyze source code metadata, detect sensitive backup files, and mirror endpoints to extract all 5 hidden flags.**
+## 📋 Objective & Scope
+> **Perform active and passive web reconnaissance against the designated target (`http://target.ine.local`). The objective is to uncover hidden information, inspect search engine directives, analyze source code metadata, detect sensitive backup files, and mirror endpoints to extract all 5 hidden challenge flags.**
+
+- **Target Host:** `target.ine.local` (`192.42.203.3`)
+- **Primary Attack Vectors:** HTTP (Port 80), Search Engine Directives (`robots.txt`), Configuration Backups (`.bak`), Web Mirroring
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20132215.png" alt="INE Lab 1 Completed" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20132215.png" alt="INE Assessment Methodologies Lab 1 completion screen showing all 5 flags captured" width="750px">
   <br><i>Figure 1: INE Portal — All 5 flags successfully captured (Activity Status: FINISHED).</i>
 </div>
 
 <br>
 
 ## 🛠️ Tools Used
-| Tool | Purpose |
+| Tool | Purpose in Assessment |
 | :--- | :--- |
-| **Nmap** | Initial port scanning, service version detection, and default script execution. |
+| **Nmap** | Initial port scanning, service version detection, and default NSE scripts. |
 | **Firefox & DevTools** | Web interface inspection, page source analysis, and robots.txt examination. |
-| **DIRB** | Directory brute-forcing with common and custom wordlists (`big.txt`), plus extension fuzzing (`.bak`, `.tar.gz`). |
-| **Wget & cURL** | Direct retrieval of exposed backup configuration files. |
-| **HTTrack Website Copier** | Offline site mirroring to uncover referenced files and API endpoints. |
+| **DIRB** | Directory brute-forcing with wordlists (`big.txt`) and file extension fuzzing (`.bak`, `.tar.gz`). |
+| **Wget & cURL** | Asset retrieval and HTTP request analysis. |
+| **HTTrack Website Copier** | Full offline site mirroring to identify unlinked scripts and RSD descriptors. |
+
+<br>
+
+---
+
+## 🗺️ MITRE ATT&CK® Enterprise Mapping
+| Tactic | Technique ID | Technique Name | Description in Lab |
+| :--- | :--- | :--- | :--- |
+| **Reconnaissance** | `T1595.002` | Active Scanning: Vulnerability Scanning | Service banner grabbing and directory brute-forcing with DIRB |
+| **Reconnaissance** | `T1596.001` | Search Open Technical Databases | Inspecting `robots.txt` crawler exclusion rules |
+| **Discovery** | `T1083` | File and Directory Discovery | Discovering exposed `/wp-content/uploads/` and `wp-config.bak` |
+| **Collection** | `T1213` | Data from Information Repositories | Extracting credentials and salts from plaintext backup files |
 
 <br>
 
@@ -32,7 +58,7 @@
 ## 🔍 1. Reconnaissance & Service Fingerprinting
 
 ### 🌐 Network Scanning
-We begin by running a standard Nmap service version and script scan (`-sV -sC`) against the designated hostname `target.ine.local` (`192.42.203.3`):
+We begin by running a standard Nmap service version and script scan (`-sV -sC`) against the designated hostname `target.ine.local`:
 
 ```bash
 nmap -sC -sV target.ine.local
@@ -41,10 +67,10 @@ nmap -sC -sV target.ine.local
 **Scan Findings:**
 - **Port 80/tcp:** Apache httpd `2.4.41` on Ubuntu.
 - **Robots.txt:** 1 disallowed entry detected (`/wp-admin/`).
-- **Generator Meta Tag Leak:** The scan immediately flags an interesting generator header containing our second flag!
+- **Generator Meta Tag Leak:** The scan immediately flags an interesting generator header containing our second flag.
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20123240.png" alt="Nmap Scan Result" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20123240.png" alt="Nmap service scan output revealing Apache 2.4.41 and WordPress generator banner" width="750px">
   <br><i>Figure 2: Nmap scan output revealing Apache 2.4.41 and the WordPress generator banner.</i>
 </div>
 
@@ -68,7 +94,7 @@ FLAG1{1b5d8cb80f9d43c18462e47986890291}
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20123408.png" alt="Robots.txt Inspection" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20123408.png" alt="Robots.txt file showing disallowed wp-admin path and embedded Flag 1" width="750px">
   <br><i>Figure 3: Inspecting robots.txt in Firefox to uncover Flag 1.</i>
 </div>
 
@@ -84,7 +110,7 @@ During our initial Nmap scan and by inspecting the raw HTML source code (`view-s
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20123537.png" alt="Page Source Generator Tag" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20123537.png" alt="HTML source code view highlighting meta generator tag with Flag 2" width="750px">
   <br><i>Figure 4: HTML source showing the generator meta tag leaking WordPress 6.5.3 and Flag 2.</i>
 </div>
 
@@ -110,7 +136,7 @@ dirb http://target.ine.local/
 Directory listing was left enabled on `http://target.ine.local/wp-content/uploads/`, allowing unrestricted browsing of uploaded assets, fulfilling the requirement for Flag 3.
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20123748.png" alt="DIRB Directory Scan" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20123748.png" alt="DIRB wordlist fuzzing discovering wp-content uploads directory" width="750px">
   <br><i>Figure 5: DIRB identifies standard WordPress directories including the exposed uploads folder.</i>
 </div>
 
@@ -134,7 +160,7 @@ dirb http://target.ine.local/ -w /usr/share/dirb/wordlists/big.txt -X .bak,.tar.
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20123931.png" alt="DIRB Backup Discovery" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20123931.png" alt="DIRB extension fuzzing detecting wp-config.bak configuration file" width="750px">
   <br><i>Figure 6: Extension brute-forcing locates the exposed wp-config.bak file.</i>
 </div>
 
@@ -146,7 +172,7 @@ cat wp-config.bak
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20124037.png" alt="Wget Download" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20124037.png" alt="Retrieved wp-config.bak file showing exposed database credentials and Flag 4" width="750px">
   <br><i>Figure 7: Downloading wp-config.bak to the local environment.</i>
 </div>
 
@@ -157,7 +183,7 @@ At the bottom of `wp-config.bak`, after the WordPress salt definitions, we find 
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20124131.png" alt="Flag 4 in wp-config.bak" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20124131.png" alt="Flag 4 revealed inside the sensitive configuration backup" width="750px">
   <br><i>Figure 8: Flag 4 revealed within the sensitive WordPress configuration backup.</i>
 </div>
 
@@ -175,7 +201,7 @@ ls -la
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20124216.png" alt="HTTrack Mirroring" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20124216.png" alt="HTTrack website copier terminal output mirroring target web application" width="750px">
   <br><i>Figure 9: HTTrack mirroring reveals indexed files and xmlrpc0db0.php.</i>
 </div>
 
@@ -197,7 +223,7 @@ cat xmlrpc0db0.php
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-14%20124250.png" alt="Flag 5 in xmlrpc" width="750px">
+  <img src="./images/Screenshot%202026-10-14%20124250.png" alt="Flag 5 captured inside the mirrored RSD XML-RPC descriptor" width="750px">
   <br><i>Figure 10: Flag 5 captured inside the mirrored RSD/XML-RPC descriptor.</i>
 </div>
 
@@ -219,33 +245,43 @@ cat xmlrpc0db0.php
 
 ---
 
-## 🛡️ 4. Vulnerability Analysis & Real-World Remediation
+## 🛡️ 4. Vulnerability Risk Ratings & Defensive Hardening
 
-<details>
-<summary><b>Click to expand vulnerability details & remediation guide</b></summary>
+### 📊 CVSS v3.1 Findings Matrix
+| Finding | Severity | CVSS v3.1 Score | Vector String |
+| :--- | :---: | :---: | :--- |
+| **Exposed Configuration Backup (`wp-config.bak`)** | 🔴 **High** | **7.5** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N` |
+| **Unrestricted Directory Indexing (`/wp-content/uploads/`)** | 🟡 **Medium** | **5.3** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N` |
+| **Software Version & Metadata Disclosure** | 🟡 **Medium** | **5.3** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N` |
+
 <br>
 
-### 1. Information Disclosure via `robots.txt`
-- **Issue:** Sensitive internal paths and comments placed in `robots.txt` are publicly readable by anyone.
-- **Remediation:** Never rely on `robots.txt` for access control. Restrict sensitive paths (`/wp-admin`) at the web server / authentication layer (e.g., HTTP Basic Auth, IP allowlisting).
+<details>
+<summary><b>Click to expand remediation strategies & secure configurations</b></summary>
+<br>
 
-### 2. Software Version Disclosure in HTML Meta Tags
-- **Issue:** The `<meta name="generator">` tag advertises the precise CMS version (`WordPress 6.5.3`), facilitating targeted CVE searching by attackers.
-- **Remediation:** Remove version generator tags in `functions.php`:
-  ```php
-  remove_action('wp_head', 'wp_generator');
+### 1. Plaintext Backup Configuration Exposure (`wp-config.bak`)
+- **Root Cause:** Backup files ending in `.bak` are not treated as executable PHP scripts by Apache mod_php, causing the web server to return raw database credentials, auth salts, and application secrets.
+- **Remediation:** Never store backup files within web server document roots (`/var/www/html`). Explicitly block access to `.bak`, `.old`, and `.orig` files in the Apache virtual host:
+  ```apache
+  <FilesMatch "\.(bak|old|orig|swp|temp)$">
+      Require all denied
+  </FilesMatch>
   ```
 
-### 3. Enabled Directory Listing (`Options +Indexes`)
-- **Issue:** The `/wp-content/uploads/` directory permitted index listing, allowing unauthorized actors to browse all stored files.
-- **Remediation:** Disable indexing in Apache configuration or `.htaccess`:
+### 2. Enabled Directory Listing (`Options +Indexes`)
+- **Root Cause:** Apache's `Indexes` directive allows directory listings when no index document (`index.html`/`index.php`) is present.
+- **Remediation:** Disable indexing globally in `/etc/apache2/apache2.conf` or locally via `.htaccess`:
   ```apache
   Options -Indexes
   ```
 
-### 4. Plaintext Backup Configuration Exposure
-- **Issue:** Backup files ending in `.bak` are not parsed as executable PHP scripts by Apache, causing the web server to return raw database credentials, salts, and secrets.
-- **Remediation:** Never store backup files within web server document roots (`/var/www/html`). Block `.bak`, `.old`, and `.orig` extensions in web server configuration.
+### 3. Software Version Disclosure in HTML Meta Tags
+- **Root Cause:** The `<meta name="generator">` tag advertises the precise CMS version (`WordPress 6.5.3`), facilitating targeted CVE searching by attackers.
+- **Remediation:** Suppress generator headers in the active theme's `functions.php`:
+  ```php
+  remove_action('wp_head', 'wp_generator');
+  ```
 </details>
 
 <br>
@@ -259,5 +295,5 @@ cat xmlrpc0db0.php
 
 ---
 <div align="center">
-  <i>Walkthrough documented on 14 October 2026. Part of the INE eCPPT Certification Journey.</i>
+  <i>Walkthrough documented on 14 October 2026. Part of the INE eJPT Certification Journey.</i>
 </div>

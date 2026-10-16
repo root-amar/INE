@@ -4,15 +4,25 @@
 
 <br>
 
+<div align="center">
+
 # 🎯 INE Labs — Penetration Testing Student (eJPT) Portfolio
 
-Welcome to my central hands-on training repository documenting my progress through the **INE Penetration Testing Student (PTS)** learning path leading to the **eJPT (Junior Penetration Tester)** certification.
+<p>
+  <b>Practical hands-on lab solutions, CTF walk-throughs, and vulnerability assessment notes for the eLearnSecurity Junior Penetration Tester certification.</b>
+</p>
 
-This repository serves as a professional portfolio documenting practical penetration-testing training undertaken as a **Junior Penetration Tester in Training**. It emphasizes hands-on methodology, technical reconnaissance, vulnerability identification, network service analysis, and reproducible technical documentation.
+[![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
+[![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
+[![Labs Status](https://img.shields.io/badge/Completed-4%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-17%20%2F%2017-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
+
+</div>
 
 ---
 
-## 📊 Training Track & Progress
+## 📊 Training Track & Progress Scorecard
 
 | Metric | Details |
 | :--- | :--- |
@@ -23,6 +33,7 @@ This repository serves as a professional portfolio documenting practical penetra
 | **Active Courses** | **Assessment Methodologies: Information Gathering** & **Vulnerability Assessment** |
 | **Skill Checks Completed** | **4 Labs** (100% flag capture rate) |
 | **Total Flags Captured** | **17 / 17** (5 in Lab 1, 4 in Lab 2, 4 in Lab 3, 4 in Lab 4) |
+| **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
 
@@ -49,16 +60,19 @@ This repository serves as a professional portfolio documenting practical penetra
 - **Scope:** `http://target.ine.local` (`192.42.203.3`)
 - **Key Techniques:** Passive and active information gathering, inspecting crawler rules in `robots.txt`, analyzing CMS version leakage in `<meta name="generator">`, detecting exposed configuration backups with DIRB and custom extension flags (`.bak`, `.tar.gz`), and performing full offline site mirroring with HTTrack.
 - **Flags Captured:** 5 of 5 (`FLAG1` to `FLAG5`).
+- **Full Write-up:** [Read Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%201/README.md)
 
 #### Skill Check Lab 2: Network Service Fingerprinting & Database Auditing
 - **Scope:** `http://target.ine.local` (`192.198.222.3`)
 - **Key Techniques:** Full service version fingerprinting with Nmap, identifying custom HTTP response headers (`Server: FLAG1_...`), navigating disallowed crawler endpoints in `robots.txt`, exploiting anonymous vsftpd access to retrieve database credentials, and connecting remotely to MySQL to dump the secret records table.
 - **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%202/README.md)
 
 #### Skill Check Lab 3: Samba Fuzzing, MSRPC SID Lookup & Protocol Chaining
 - **Scope:** `target.ine.local` (`192.126.190.3`)
 - **Key Techniques:** Executing full TCP range scans (`-p-`) to discover non-standard services (vsftpd on port 5554), writing a custom bash wordlist script (`share.sh`) to locate the anonymous `pubfiles` SMB share, utilizing Metasploit's MSRPC SID lookup (`smb_lookupsid`) to extract valid local usernames, dictionary cracking SMB passwords (`josh:purple`), parsing vsftpd pre-login reminders to target weak accounts with Hydra (`alice:pretty`), and capturing legal warning banners over OpenSSH (`/etc/issue.net`).
 - **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%203/README.md)
 
 ### 🎯 Course: Vulnerability Assessment
 
@@ -66,6 +80,7 @@ This repository serves as a professional portfolio documenting practical penetra
 - **Scope:** `target.ine.local` (`192.220.66.3`)
 - **Key Techniques:** Identifying exposed `.git/` repository with enabled directory browsing to extract secret files, accessing unauthenticated phpMyAdmin consoles running as `root@localhost` to extract sensitive database rows (`secret_info`), leveraging DIRB to uncover `phpinfo.php` diagnostic pages disclosing internal server variables, and discovering exposed credential storage in `/passwords/`.
 - **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%204/README.md)
 
 <br>
 

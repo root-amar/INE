@@ -1,23 +1,37 @@
 <div align="center">
+  <a href="../../README.md">⬅️ <b>Back to eJPT Track Hub</b></a> | <a href="../../../README.md">🏠 <b>Portfolio Root</b></a>
+</div>
+
+<br>
+
+<div align="center">
   <h1>🎯 Information Gathering — Skill Check Lab 3 Walkthrough 🎯</h1>
-  <p><b>Platform:</b> INE | <b>Learning Path:</b> Penetration Testing Student (eJPT) | <b>Course:</b> Assessment Methodologies: Information Gathering | <b>Challenge:</b> Skill Check 3</p>
+  <p><b>Platform:</b> INE Security | <b>Learning Path:</b> Penetration Testing Student (eJPT v2) | <b>Course:</b> Assessment Methodologies: Information Gathering | <b>Difficulty:</b> Intermediate</p>
   <p><i>Date Completed: 15 October 2026</i></p>
+
+[![Platform - INE](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=flat-square&logo=target)](https://ine.com/)
+[![Track - eJPT](https://img.shields.io/badge/Track-eJPT%20v2-orange?style=flat-square&logo=hackthebox)](../../README.md)
+[![Flags - 4/4](https://img.shields.io/badge/Flags%20Captured-4%20%2F%204-success?style=flat-square&logo=checkmarx)](./README.md)
+[![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-T1046%20%7C%20T1110-red?style=flat-square)](https://attack.mitre.org/)
 </div>
 
 ---
 
-## 📋 Objective
+## 📋 Objective & Scope
 > **Conduct comprehensive network reconnaissance and service enumeration against `target.ine.local` (`192.126.190.3`). Identify non-standard network services, enumerate Samba shares and local SIDs, perform credential brute-forcing, extract confidential files from anonymous and authenticated shares, investigate verbose FTP banners, and inspect SSH pre-login warning messages to capture all 4 MD5 flag hashes.**
 
+- **Target Host:** `target.ine.local` (`192.126.190.3`)
+- **Key Services Audited:** OpenSSH 8.2p1 (Port 22), Samba smbd 4.6.2 (Ports 139/445), vsftpd 2.0.8+ (Port 5554)
+
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20121512.png" alt="INE Lab 3 Overview" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20121512.png" alt="INE Assessment Methodologies Lab 3 environment overview and objective brief" width="750px">
   <br><i>Figure 1: INE Lab Environment and Objectives for Information Gathering CTF 3.</i>
 </div>
 
 <br>
 
 ## 🛠️ Tools Used
-| Tool | Purpose |
+| Tool | Purpose in Assessment |
 | :--- | :--- |
 | **Nmap** | Full-port TCP scanning (`-p-`), service detection, and OS fingerprinting. |
 | **Metasploit Framework** | Running `smb_enumshares`, `smb_lookupsid`, and `smb_login` auxiliary modules. |
@@ -31,17 +45,30 @@
 
 ---
 
+## 🗺️ MITRE ATT&CK® Enterprise Mapping
+| Tactic | Technique ID | Technique Name | Description in Lab |
+| :--- | :--- | :--- | :--- |
+| **Discovery** | `T1046` | Network Service Discovery | Full-port TCP scan (`-p-`) discovering FTP on port 5554 |
+| **Discovery** | `T1087.002` | Account Discovery: Domain / Local Account | Querying MSRPC SIDs via `smb_lookupsid` to harvest usernames |
+| **Credential Access** | `T1110.001` | Brute Force: Password Guessing | Offline dictionary cracking against SMB (`josh`) and FTP (`alice`) |
+| **Lateral Movement** | `T1021.002` | Remote Services: SMB/Windows Admin Shares | Authenticating to private user shares via `smbclient` |
+| **Discovery** | `T1083` | File and Directory Discovery | Listing directories across anonymous (`pubfiles`) and user shares |
+
+<br>
+
+---
+
 ## 🔍 1. Reconnaissance & Service Fingerprinting
 
 ### 🌐 Full-Port Network Scanning
-We begin with an aggressive full TCP port scan (`-p- -sV -sC -T4`) against `target.ine.local` (`192.126.190.3`):
+We begin with an aggressive full TCP port scan (`-p- -sV -sC -T4`) against `target.ine.local`:
 
 ```bash
 nmap -sV -sC target.ine.local -p- -T4
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20121650.png" alt="Nmap Scan Results" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20121650.png" alt="Nmap full TCP port scan results exposing SSH, NetBIOS, SMB, and FTP on port 5554" width="750px">
   <br><i>Figure 2: Full TCP port scan exposing SSH, Samba (NetBIOS), and an FTP service on port 5554.</i>
 </div>
 
@@ -57,7 +84,7 @@ nmap -sV -sC target.ine.local -p- -T4
 
 ## ⚡ 2. Flag Acquisition & Methodology
 
-> **Note on Submission Format:**
+> **Note on Submission Format:**  
 > Flags follow the format `FLAG<N>{<MD5_HASH>}`. The INE platform requires submitting **only the 32-character MD5 hash** string.
 
 ---
@@ -74,18 +101,18 @@ bash share.sh
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20133824.png" alt="Share Fuzzing Script" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20133824.png" alt="Custom bash share fuzzing script executing against Samba" width="750px">
   <br><i>Figure 3: Executing the custom share wordlist fuzzing script against the target.</i>
 </div>
 
 The script tests anonymous connections across common storage names until it hits a valid share:
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20133911.png" alt="Anonymous Share Discovered" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20133911.png" alt="Share discovery script confirming anonymous access to pubfiles" width="750px">
   <br><i>Figure 4: Automated fuzzing confirms successful anonymous access to the pubfiles share.</i>
 </div>
 
-**Accessing the `pubfiles` Share:**
+**Accessing the `pubfiles` Share:**  
 With the share name identified, we connect using `smbclient`:
 
 ```bash
@@ -103,12 +130,12 @@ smb: \> more flag1.txt
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20134129.png" alt="Retrieving Flag 1" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20134129.png" alt="SMB client session connected to pubfiles share" width="750px">
   <br><i>Figure 5: Connecting to pubfiles and reading flag1.txt.</i>
 </div>
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20134059.png" alt="Flag 1 Content" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20134059.png" alt="Content of flag1.txt showing Flag 1" width="750px">
   <br><i>Figure 6: Content of flag1.txt displaying Flag 1.</i>
 </div>
 
@@ -132,7 +159,7 @@ run
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20123721.png" alt="Metasploit SID Lookup" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20123721.png" alt="Metasploit smb_lookupsid module output showing user RID mapping" width="750px">
   <br><i>Figure 7: Metasploit SID lookup reveals local user accounts: josh (RID 1000), bob (RID 1001), and nancy (RID 1002).</i>
 </div>
 
@@ -152,13 +179,13 @@ run
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20123915.png" alt="SMB Login Success" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20123915.png" alt="Metasploit smb_login successful authentication output" width="750px">
   <br><i>Figure 8: Metasploit successfully brute-forces Josh's SMB password: purple.</i>
 </div>
 
 **Valid Credentials Harvested:** `josh` : `purple`
 
-**Accessing Josh's Private Share:**
+**Accessing Josh's Private Share:**  
 Samba hosts home shares matching usernames. We connect to `//target.ine.local/josh`:
 
 ```bash
@@ -175,12 +202,12 @@ smb: \> more flag2.txt
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20130935.png" alt="Accessing Josh Share" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20130935.png" alt="smbclient session authenticated as josh reading flag2.txt" width="750px">
   <br><i>Figure 9: Authenticating to Josh's private share and extracting flag2.txt.</i>
 </div>
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20130837.png" alt="Flag 2 and FTP Hint" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20130837.png" alt="Flag 2 text file showing flag and FTP clue" width="750px">
   <br><i>Figure 10: flag2.txt reveals Flag 2 along with a critical clue pointing to the FTP service.</i>
 </div>
 
@@ -244,7 +271,7 @@ cat flag3.txt
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20140001.png" alt="FTP Authentication and Flag 3" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20140001.png" alt="FTP session download showing Flag 3 from flag3.txt" width="750px">
   <br><i>Figure 11: FTP authentication as alice, retrieving flag3.txt, and printing Flag 3.</i>
 </div>
 
@@ -294,13 +321,10 @@ alice@target.ine.local's password:
 ```
 
 <div align="center">
-  <img src="./images/Screenshot%202026-10-15%20140519.png" alt="SSH Banner Flag 4" width="750px">
+  <img src="./images/Screenshot%202026-10-15%20140519.png" alt="OpenSSH legal warning banner displaying Flag 4 prior to password prompt" width="750px">
   <br><i>Figure 12: SSH legal warning banner disclosing Flag 4 prior to authentication.</i>
 </div>
 
-```text
-FLAG4{45cdb0c2ba254471836329715727413b}
-```
 - **Submitted Hash:** `45cdb0c2ba254471836329715727413b`
 
 <br>
@@ -320,14 +344,24 @@ FLAG4{45cdb0c2ba254471836329715727413b}
 
 ---
 
-## 🛡️ 4. Vulnerability Analysis & Hardening Recommendations
+## 🛡️ 4. Vulnerability Risk Ratings & Defensive Hardening
+
+### 📊 CVSS v3.1 Findings Matrix
+| Finding | Severity | CVSS v3.1 Score | Vector String |
+| :--- | :---: | :---: | :--- |
+| **Weak Authentication Credentials (`josh:purple`, `alice:pretty`)** | 🔴 **Critical** | **9.8** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H` |
+| **Unrestricted Anonymous Samba Share Access (`pubfiles`)** | 🔴 **High** | **7.5** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N` |
+| **MSRPC SID User Enumeration (`smb_lookupsid`)** | 🟡 **Medium** | **5.3** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N` |
+| **Sensitive Data Exposure in Pre-Login Service Banners** | 🟡 **Medium** | **5.3** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N` |
+
+<br>
 
 <details>
-<summary><b>Click to expand vulnerability details & remediation guide</b></summary>
+<summary><b>Click to expand remediation strategies & secure configurations</b></summary>
 <br>
 
 ### 📌 1. Anonymous Samba Share Configuration
-- **Vulnerability:** Unauthenticated users can connect to the `pubfiles` share and read stored files.
+- **Root Cause:** Unauthenticated guest users are allowed to connect to `pubfiles` and read confidential company assets.
 - **Remediation:** Disable guest/anonymous access in `/etc/samba/smb.conf`:
   ```ini
   [pubfiles]
@@ -337,19 +371,19 @@ FLAG4{45cdb0c2ba254471836329715727413b}
   ```
 
 ### 📌 2. RPC SID User Enumeration
-- **Vulnerability:** Anonymous RPC sessions allow remote attackers to translate SIDs to usernames (`smb_lookupsid`), mapping out organizational users.
+- **Root Cause:** Anonymous RPC sessions allow remote attackers to translate SIDs to usernames (`smb_lookupsid`), mapping out organizational users.
 - **Remediation:** Restrict anonymous LSA/SAMR queries in Samba:
   ```ini
   [global]
      restrict anonymous = 2
   ```
 
-### 📌 3. Weak User Passwords
-- **Vulnerability:** Accounts (`josh:purple`, `alice:pretty`) utilize common dictionary passwords susceptible to brute-forcing.
+### 📌 3. Weak User Passwords & Lack of Lockout Policies
+- **Root Cause:** Accounts (`josh:purple`, `alice:pretty`) utilize common dictionary passwords susceptible to brute-forcing.
 - **Remediation:** Implement PAM password complexity modules (`pam_pwquality`) requiring minimum length (12+ characters), mixed case, numbers, and symbols. Enforce account lockout thresholds after consecutive failed attempts (`pam_faillock`).
 
 ### 📌 4. Information Disclosure in Service Banners
-- **Vulnerability:** The vsftpd banner on port 5554 leaked internal usernames (`ashley`, `alice`, `amanda`), while the SSH pre-login banner contained secret challenge data.
+- **Root Cause:** The vsftpd banner on port 5554 leaked internal usernames (`ashley`, `alice`, `amanda`), while the SSH pre-login banner contained sensitive data.
 - **Remediation:** Configure banners to display strictly generic legal disclaimers without usernames, versions, or system internals:
   ```ini
   # vsftpd.conf
@@ -360,10 +394,6 @@ FLAG4{45cdb0c2ba254471836329715727413b}
   Banner /etc/issue.net
   # Ensure /etc/issue.net contains only generic legal warnings.
   ```
-
-### 📌 5. Non-Standard Port Security (Security through Obscurity)
-- **Vulnerability:** Moving vsftpd to port 5554 failed to prevent discovery once full-port scanning (`-p-`) was conducted.
-- **Remediation:** Rely on robust authentication, firewall filtering, and intrusion detection (e.g., Fail2ban) rather than port obscurity.
 </details>
 
 <br>
@@ -378,5 +408,5 @@ FLAG4{45cdb0c2ba254471836329715727413b}
 
 ---
 <div align="center">
-  <i>Walkthrough compiled on 15 October 2026. Documented for INE Penetration Testing certification path.</i>
+  <i>Walkthrough compiled on 15 October 2026. Documented for INE Penetration Testing Student (eJPT) certification path.</i>
 </div>
