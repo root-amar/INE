@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>🎯 Information Gathering CTF 1 Walkthrough 🎯</h1>
-  <p><b>Platform:</b> INE | <b>Course:</b> Assessment Methodologies: Information Gathering | <b>Difficulty:</b> Easy / Intermediate</p>
+  <h1>🎯 Information Gathering — Skill Check Lab 1 Walkthrough 🎯</h1>
+  <p><b>Platform:</b> INE | <b>Learning Path:</b> Penetration Testing Student (eJPT) | <b>Course:</b> Assessment Methodologies: Information Gathering | <b>Challenge:</b> Skill Check 1</p>
   <p><i>Date Completed: 14 October 2026</i></p>
 </div>
 

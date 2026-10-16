@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🎯 [Lab Name] Walkthrough 🎯</h1>
-  <p><b>Platform:</b> INE | <b>Course / Track:</b> [Course Name, e.g., Assessment Methodologies / eCPPT] | <b>Difficulty:</b> [Easy / Medium / Hard]</p>
+  <p><b>Platform:</b> INE | <b>Learning Path:</b> Penetration Testing Student (eJPT) | <b>Course:</b> [Course Name, e.g., Assessment Methodologies: Information Gathering] | <b>Difficulty:</b> [Easy / Medium / Hard]</p>
   <p><i>Date Completed: YYYY-MM-DD</i></p>
 </div>
 
