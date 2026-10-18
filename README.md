@@ -8,8 +8,8 @@
 
 [![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification - eJPT v2](https://img.shields.io/badge/Certification-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
-[![Labs Completed - 4 / 4](https://img.shields.io/badge/Labs%20Completed-4%20%2F%204%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
-[![Flags Captured - 17 / 17](https://img.shields.io/badge/Flags%20Captured-17%20%2F%2017-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
+[![Labs Completed - 5 Labs](https://img.shields.io/badge/Labs%20Completed-5%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
+[![Flags Captured - 21 / 21](https://img.shields.io/badge/Flags%20Captured-21%20%2F%2021-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
 [![Methodology - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -49,7 +49,7 @@ The repository is organized into modular directories representing distinct certi
 
 | Certification Track | Platform / Learning Path | Status | Labs Completed | Flags Captured | Primary Focus | Directory Link |
 | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **4 Labs** | **17 / 17** | Assessment methodologies, network recon, vulnerability analysis, web app basics, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
+| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **5 Labs** | **21 / 21** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
 | **eCPPTv2** | **Penetration Testing Professional (PTP)** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, system exploitation, privilege escalation, reporting | `eCPPTv2/` *(Upcoming)* |
 | **eWPT** | **Web Application Penetration Testing (WAPT)** | 🟡 *Planned* | — | — | Web architectures, OWASP Top 10, SQLi, XSS, CSRF, session hijacking, API testing | `eWPT/` *(Upcoming)* |
 | **eCIR** | **Certified Incident Responder (CIR)** | 🟡 *Planned* | — | — | Threat detection, live host triage, memory analysis, log forensics, incident containment | `eCIR/` *(Upcoming)* |
@@ -79,6 +79,8 @@ INE/
     │   └── Information Gathering CTF 4/       # Lab 4: Vulnerability Assessment (4/4 Flags)
     │
     ├── Host & Network Penetration Testing/    # Section 4: System & Network Attacks
+    │   ├── README.md                          # Section Index & Syllabus
+    │   └── System-Host Based Attacks CTF 1/   # Lab 1: WebDAV, SMB & RDP (4/4 Flags)
     ├── Web Application Penetration Testing/   # Section 5: Web Attacks & HTTP
     ├── Active Directory Exploitation/         # Advanced Enterprise AD
     ├── Metasploit & Post Exploitation/        # Metasploit Framework & Payloads
@@ -103,6 +105,7 @@ INE/
 | 2026-10-14 | Assessment Methodologies: Information Gathering | Skill Check Lab 2 | Easy / Medium | 4 / 4 | Custom HTTP banner leakage (`FLAG1_...`), robots.txt navigation, anonymous vsftpd access, MySQL database credential dumping | [Read Walkthrough](./eJPT/Assessment%20Methodologies/Information%20Gathering%20CTF%202/README.md) |
 | 2026-10-15 | Assessment Methodologies: Information Gathering | Skill Check Lab 3 | Intermediate | 4 / 4 | Full TCP scanning (`-p-`), custom SMB share bash fuzzing (`share.sh`), Metasploit MSRPC SID lookup, Hydra password cracking, OpenSSH banner auditing | [Read Walkthrough](./eJPT/Assessment%20Methodologies/Information%20Gathering%20CTF%203/README.md) |
 | 2026-10-16 | Assessment Methodologies: Vulnerability Assessment | Skill Check Lab 1 (CTF 4) | Easy / Medium | 4 / 4 | Exposed `.git/` repository indexing, unauthenticated phpMyAdmin root database dump (`mysql.secret_info`), `phpinfo.php` diagnostic analysis, `/passwords/` extraction | [Read Walkthrough](./eJPT/Assessment%20Methodologies/Information%20Gathering%20CTF%204/README.md) |
+| 2026-10-18 | Host & Network Penetration Testing: System/Host Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | HTTP Basic Auth cracking (`bob`), WebDAV ASP webshell upload & execution, SMB brute-forcing (`administrator:pineapple`), Metasploit PsExec Meterpreter session, FreeRDP desktop access | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%201/README.md) |
 
 <br>
 

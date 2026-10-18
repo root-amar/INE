@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-4%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-17%20%2F%2017-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-5%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-21%20%2F%2021-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -29,10 +29,10 @@
 | **Training Platform** | **INE** (Interactive Network Experts) |
 | **Learning Path** | **Penetration Testing Student (PTS)** |
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
-| **Current Section** | **Section 2: Assessment Methodologies** |
-| **Active Courses** | **Assessment Methodologies: Information Gathering** & **Vulnerability Assessment** |
-| **Skill Checks Completed** | **4 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **17 / 17** (5 in Lab 1, 4 in Lab 2, 4 in Lab 3, 4 in Lab 4) |
+| **Active Sections** | **Section 2: Assessment Methodologies** & **Section 4: Host & Network Penetration Testing** |
+| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks** |
+| **Skill Checks Completed** | **5 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **21 / 21** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -47,6 +47,7 @@
 | 2026-10-14 | Assessment Methodologies: Information Gathering | Skill Check Lab 2 | Easy / Medium | 4 / 4 | HTTP server banner disclosure, hidden paths via robots.txt, vsftpd anonymous access & credential extraction, MySQL database enumeration | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%202/README.md) |
 | 2026-10-15 | Assessment Methodologies: Information Gathering | Skill Check Lab 3 | Intermediate | 4 / 4 | Full TCP port scanning (`-p-`), custom Samba share fuzzing (`pubfiles`), Metasploit SID lookup (`smb_lookupsid`), SMB dictionary attack (`josh:purple`), vsftpd banner analysis & Hydra cracking (`alice:pretty`), OpenSSH pre-login warning banner inspection | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%203/README.md) |
 | 2026-10-16 | Assessment Methodologies: Vulnerability Assessment | Skill Check Lab 1 (CTF 4) | Easy / Medium | 4 / 4 | Nmap service enumeration, exposed `.git/` directory indexing, unauthenticated phpMyAdmin root access (`mysql.secret_info`), diagnostic disclosure via `phpinfo.php`, and `/passwords/` directory browsing | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%204/README.md) |
+| 2026-10-18 | Host & Network Penetration Testing: System/Host Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | HTTP Basic Auth cracking (`bob`), WebDAV ASP webshell upload & execution, SMB brute-forcing (`administrator:pineapple`), Metasploit PsExec Meterpreter session, FreeRDP desktop access | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%201/README.md) |
 
 <br>
 
@@ -86,6 +87,20 @@
 
 ---
 
+## 🔬 Course Breakdown: Host & Network Penetration Testing
+
+### 🎯 Course: System/Host Based Attacks
+
+#### Skill Check Lab 1: WebDAV Exploitation, SMB Credential Attacks & Remote Desktop Access
+- **Scope:** `target1.ine.local` (`10.5.17.248`), `target2.ine.local` (`10.5.16.171`)
+- **Key Techniques:** Automated HTTP Basic Auth cracking with THC-Hydra (`bob`), WebDAV method and execution verification using DAVTest, interactive WebDAV file management via Cadaver, uploading an ASP webshell for remote command execution on IIS 10.0, SMB dictionary attack against Windows Server (`administrator:pineapple`), Metasploit PsExec service injection for Meterpreter access, and FreeRDP graphical administrative session.
+- **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%201/README.md)
+
+<br>
+
+---
+
 ## 🗺️ Penetration Testing Student (eJPT) Learning Roadmap
 
 Official curriculum tracking directly aligned with the INE training portal:
@@ -107,7 +122,8 @@ Official curriculum tracking directly aligned with the INE training portal:
 - [ ] **Assessment Methodologies: Auditing Fundamentals** *(3h 58m | Alexis Ahmed)*
 
 ### 💻 Section 4: Host & Network Penetration Testing
-- [ ] **Host & Network Penetration Testing: System/Host Based Attacks** *(20h 28m | Alexis Ahmed)*
+- [x] **Host & Network Penetration Testing: System/Host Based Attacks** *(20h 28m | Alexis Ahmed)*
+  - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
 - [ ] **Host & Network Penetration Testing: Network-Based Attacks** *(4h 47m | Alexis Ahmed)*
 - [ ] **Host & Network Penetration Testing: The Metasploit Framework (MSF)** *(35h 29m | Alexis Ahmed)*
 - [ ] **Host & Network Penetration Testing: Exploitation** *(20h 49m | Alexis Ahmed)*
