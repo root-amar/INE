@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-5%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-21%20%2F%2021-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-6%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-25%20%2F%2025-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -30,9 +30,9 @@
 | **Learning Path** | **Penetration Testing Student (PTS)** |
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
 | **Active Sections** | **Section 2: Assessment Methodologies** & **Section 4: Host & Network Penetration Testing** |
-| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks** |
-| **Skill Checks Completed** | **5 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **21 / 21** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1) |
+| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Exploitation** |
+| **Skill Checks Completed** | **6 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **25 / 25** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -99,6 +99,16 @@
 
 <br>
 
+### 🎯 Course: Exploitation
+
+#### Skill Check Lab 1 (CTF 1): Web Application RCE, OpenSSH Brute-Force & WordPress Arbitrary File Read
+- **Scope:** `target1.ine.local` (`192.225.24.3`), `target2.ine.local` (`192.116.99.4`)
+- **Key Techniques:** FlatCore CMS 2.0.7 ACP authentication (`admin:password1`), authenticated arbitrary file upload exploit (`50262.py` / CVE-2021-39608) yielding interactive web shell (`www-data`), `/etc/passwd` enumeration, THC-Hydra dictionary attack cracking SSH credentials (`iamaweakuser:angel`), WordPress plugin enumeration discovering Duplicator 1.3.26, Metasploit arbitrary file read module (`auxiliary/scanner/http/wp_duplicator_file_read` / CVE-2020-11738) extracting `/flag3.txt` and `/etc/passwd`, and passwordless SSH compromise of account `iamacrazyfreeuser`.
+- **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%201/README.md)
+
+<br>
+
 ---
 
 ## 🗺️ Penetration Testing Student (eJPT) Learning Roadmap
@@ -126,7 +136,8 @@ Official curriculum tracking directly aligned with the INE training portal:
   - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
 - [ ] **Host & Network Penetration Testing: Network-Based Attacks** *(4h 47m | Alexis Ahmed)*
 - [ ] **Host & Network Penetration Testing: The Metasploit Framework (MSF)** *(35h 29m | Alexis Ahmed)*
-- [ ] **Host & Network Penetration Testing: Exploitation** *(20h 49m | Alexis Ahmed)*
+- [x] **Host & Network Penetration Testing: Exploitation** *(20h 49m | Alexis Ahmed)*
+  - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
 - [ ] **Host & Network Penetration Testing: Post-Exploitation** *(26h 33m | Alexis Ahmed)*
 - [ ] **Host & Network Penetration Testing: Social Engineering** *(3h 11m | Alexis Ahmed)*
 
