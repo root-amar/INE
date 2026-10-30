@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-6%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-25%20%2F%2025-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-7%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-29%20%2F%2029-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -29,10 +29,10 @@
 | **Training Platform** | **INE** (Interactive Network Experts) |
 | **Learning Path** | **Penetration Testing Student (PTS)** |
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
-| **Active Sections** | **Section 2: Assessment Methodologies** & **Section 4: Host & Network Penetration Testing** |
-| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Exploitation** |
-| **Skill Checks Completed** | **6 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **25 / 25** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2) |
+| **Active Sections** | **Section 2: Assessment Methodologies**, **Section 4: Host & Network Penetration Testing**, **Section 5: Web Application Penetration Testing** |
+| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Exploitation**, **Introduction to Web & HTTP** |
+| **Skill Checks Completed** | **7 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **29 / 29** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in WA Lab 1) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -48,6 +48,8 @@
 | 2026-10-15 | Assessment Methodologies: Information Gathering | Skill Check Lab 3 | Intermediate | 4 / 4 | Full TCP port scanning (`-p-`), custom Samba share fuzzing (`pubfiles`), Metasploit SID lookup (`smb_lookupsid`), SMB dictionary attack (`josh:purple`), vsftpd banner analysis & Hydra cracking (`alice:pretty`), OpenSSH pre-login warning banner inspection | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%203/README.md) |
 | 2026-10-16 | Assessment Methodologies: Vulnerability Assessment | Skill Check Lab 1 (CTF 4) | Easy / Medium | 4 / 4 | Nmap service enumeration, exposed `.git/` directory indexing, unauthenticated phpMyAdmin root access (`mysql.secret_info`), diagnostic disclosure via `phpinfo.php`, and `/passwords/` directory browsing | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%204/README.md) |
 | 2026-10-18 | Host & Network Penetration Testing: System/Host Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | HTTP Basic Auth cracking (`bob`), WebDAV ASP webshell upload & execution, SMB brute-forcing (`administrator:pineapple`), Metasploit PsExec Meterpreter session, FreeRDP desktop access | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%201/README.md) |
+| 2026-10-28 | Host & Network Penetration Testing: Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | FlatCore CMS 2.0.7 Authenticated RCE (`50262.py`), OpenSSH brute-force (`iamaweakuser:angel`), WordPress Duplicator 1.3.26 Arbitrary File Read (CVE-2020-11738), Passwordless SSH access (`iamacrazyfreeuser`) | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%201/README.md) |
+| 2026-10-30 | Web Application Penetration Testing: Introduction to Web & HTTP | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Local File Inclusion / Path Traversal (`view_file?file=/flag.txt`), Gobuster directory fuzzing (`/secured/`), THC-Hydra HTTP POST login brute-force (`guest:butterfly1`), SQL Injection authentication bypass (`admin' OR 1=1-- -`) | [Walkthrough](./Web%20Application%20Penetration%20Testing/Web%20Application%20Penetration%20Testing%20CTF%201/README.md) |
 
 <br>
 
@@ -111,6 +113,20 @@
 
 ---
 
+## 🔬 Course Breakdown: Web Application Penetration Testing
+
+### 🎯 Course: Introduction to the Web & HTTP Protocol
+
+#### Skill Check Lab 1 (CTF 1): LFI / Path Traversal, Directory Fuzzing, Credential Attacks & SQLi Auth Bypass
+- **Scope:** `http://target.ine.local` (`192.162.243.3`)
+- **Key Techniques:** Nmap service fingerprinting identifying Gunicorn WSGI HTTP server, Local File Inclusion (LFI) via `/view_file?file=/flag.txt` extracting Flag 1 from the filesystem root, Gobuster directory brute-forcing with `common.txt` revealing hidden `/secured/` endpoint listing sensitive JSON artifacts (`flag.txt`), THC-Hydra dictionary attack on HTTP POST login form cracking credentials (`guest:butterfly1`) to extract Flag 3 from user profile, and SQL injection authentication bypass (`admin' OR 1=1-- -`) hijacking administrative account to capture Flag 4.
+- **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4`).
+- **Full Write-up:** [Read Walkthrough](./Web%20Application%20Penetration%20Testing/Web%20Application%20Penetration%20Testing%20CTF%201/README.md)
+
+<br>
+
+---
+
 ## 🗺️ Penetration Testing Student (eJPT) Learning Roadmap
 
 Official curriculum tracking directly aligned with the INE training portal:
@@ -142,7 +158,8 @@ Official curriculum tracking directly aligned with the INE training portal:
 - [ ] **Host & Network Penetration Testing: Social Engineering** *(3h 11m | Alexis Ahmed)*
 
 ### 🌐 Section 5: Web Application Penetration Testing
-- [ ] **Web Application Penetration Testing: Introduction to the Web & HTTP Protocol** *(11h 51m | Alexis Ahmed)*
+- [x] **Web Application Penetration Testing: Introduction to the Web & HTTP Protocol** *(11h 51m | Alexis Ahmed)*
+  - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
 
 ### 🤖 Section 6: AI Enhanced Pentesting
 - [ ] **Offensive AI: Generative AI for Pentesters** *(4h 44m | Alexis Ahmed)*
