@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-7%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-29%20%2F%2029-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-8%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-33%20%2F%2033-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -30,9 +30,9 @@
 | **Learning Path** | **Penetration Testing Student (PTS)** |
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
 | **Active Sections** | **Section 2: Assessment Methodologies**, **Section 4: Host & Network Penetration Testing**, **Section 5: Web Application Penetration Testing** |
-| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Exploitation**, **Introduction to Web & HTTP** |
-| **Skill Checks Completed** | **7 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **29 / 29** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in WA Lab 1) |
+| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Exploitation**, **The Metasploit Framework**, **Introduction to Web & HTTP** |
+| **Skill Checks Completed** | **8 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **33 / 33** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in WA Lab 1) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -50,6 +50,7 @@
 | 2026-10-18 | Host & Network Penetration Testing: System/Host Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | HTTP Basic Auth cracking (`bob`), WebDAV ASP webshell upload & execution, SMB brute-forcing (`administrator:pineapple`), Metasploit PsExec Meterpreter session, FreeRDP desktop access | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%201/README.md) |
 | 2026-10-28 | Host & Network Penetration Testing: Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | FlatCore CMS 2.0.7 Authenticated RCE (`50262.py`), OpenSSH brute-force (`iamaweakuser:angel`), WordPress Duplicator 1.3.26 Arbitrary File Read (CVE-2020-11738), Passwordless SSH access (`iamacrazyfreeuser`) | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%201/README.md) |
 | 2026-10-30 | Web Application Penetration Testing: Introduction to Web & HTTP | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Local File Inclusion / Path Traversal (`view_file?file=/flag.txt`), Gobuster directory fuzzing (`/secured/`), THC-Hydra HTTP POST login brute-force (`guest:butterfly1`), SQL Injection authentication bypass (`admin' OR 1=1-- -`) | [Walkthrough](./Web%20Application%20Penetration%20Testing/Web%20Application%20Penetration%20Testing%20CTF%201/README.md) |
+| 2026-11-02 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Metasploit PostgreSQL DB integration, MSSQL CLR payload RCE (`mssql_clr_payload`), token privilege auditing (`SeImpersonatePrivilege`), PrintSpooler `getsystem` elevation, recursive System32 discovery | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF1/README.md) |
 
 <br>
 
@@ -111,6 +112,16 @@
 
 <br>
 
+### 🎯 Course: The Metasploit Framework (MSF)
+
+#### Skill Check Lab 1 (CTF 1): MSSQL CLR RCE, Token Impersonation & SYSTEM Escalation
+- **Scope:** `target.ine.local` (`10.5.26.81` / `10.5.16.19`)
+- **Key Techniques:** Nmap service discovery identifying MSSQL Server 2012 SP3 (`WIN-5BQ220KH4SO`), initializing PostgreSQL backend with `msfconsole`, exploiting Microsoft SQL Server via Common Language Runtime assembly injection (`exploit/windows/mssql/mssql_clr_payload`), establishing 64-bit Meterpreter reverse shell, retrieving Flag 1 (`C:\flag1.txt`), exfiltrating Flag 2 (`C:\Windows\System32\config\flag2.txt`), recursive discovery locating Flag 3 hint (`C:\Windows\System32\drivers\etc\EscaltePrivilageToGetThisFlag.txt`), auditing token rights (`SeImpersonatePrivilege`), escalating to `NT AUTHORITY\SYSTEM` via `getsystem` (PrintSpooler named pipe impersonation), and extracting Flag 4 from the Administrator Desktop.
+- **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF1/README.md)
+
+<br>
+
 ---
 
 ## 🔬 Course Breakdown: Web Application Penetration Testing
@@ -151,7 +162,8 @@ Official curriculum tracking directly aligned with the INE training portal:
 - [x] **Host & Network Penetration Testing: System/Host Based Attacks** *(20h 28m | Alexis Ahmed)*
   - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
 - [ ] **Host & Network Penetration Testing: Network-Based Attacks** *(4h 47m | Alexis Ahmed)*
-- [ ] **Host & Network Penetration Testing: The Metasploit Framework (MSF)** *(35h 29m | Alexis Ahmed)*
+- [x] **Host & Network Penetration Testing: The Metasploit Framework (MSF)** *(35h 29m | Alexis Ahmed)*
+  - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
 - [x] **Host & Network Penetration Testing: Exploitation** *(20h 49m | Alexis Ahmed)*
   - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
 - [ ] **Host & Network Penetration Testing: Post-Exploitation** *(26h 33m | Alexis Ahmed)*
