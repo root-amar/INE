@@ -26,6 +26,8 @@ This portfolio serves as a technical showcase for practical competencies in:
 - **Service Exploitation & Protocol Chaining** (vsftpd, Samba SMB, MySQL, FlatCore CMS, WordPress, MSSQL)
 - **Enterprise Defense & Remediation** (MITRE ATT&CK® mapping, CVSS v3.1 scoring, defensive hardening)
 
+> 📖 **Looking for an in-depth breakdown?** Read the [**Full Project Overview & Technical Architecture (`OVERVIEW.md`)**](./OVERVIEW.md) for curriculum metrics, master flag matrices, tool ecosystems, and defensive blueprints.
+
 <details>
 <summary><b>🔍 GitHub Repository SEO Metadata & Discovery Tags (Click to expand)</b></summary>
 <br>
@@ -65,6 +67,7 @@ All coursework and technical write-ups are organized under their respective cert
 ```text
 INE/
 ├── README.md                                  # Root Portfolio Hub & Certification Index
+├── OVERVIEW.md                                # Comprehensive Project Architecture & Deep Dive
 ├── new-lab.ps1                                # Automated Lab Scaffolding Script
 ├── .gitignore                                 # Git ignore patterns
 │
