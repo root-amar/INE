@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-8%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-33%20%2F%2033-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-9%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-37%20%2F%2037-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -31,8 +31,8 @@
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
 | **Active Sections** | **Section 2: Assessment Methodologies**, **Section 4: Host & Network Penetration Testing**, **Section 5: Web Application Penetration Testing** |
 | **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Exploitation**, **The Metasploit Framework**, **Introduction to Web & HTTP** |
-| **Skill Checks Completed** | **8 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **33 / 33** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in WA Lab 1) |
+| **Skill Checks Completed** | **9 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **37 / 37** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in HN Lab 4, 4 in WA Lab 1) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -49,6 +49,7 @@
 | 2026-10-16 | Assessment Methodologies: Vulnerability Assessment | Skill Check Lab 1 (CTF 4) | Easy / Medium | 4 / 4 | Nmap service enumeration, exposed `.git/` directory indexing, unauthenticated phpMyAdmin root access (`mysql.secret_info`), diagnostic disclosure via `phpinfo.php`, and `/passwords/` directory browsing | [Walkthrough](./Assessment%20Methodologies/Information%20Gathering%20CTF%204/README.md) |
 | 2026-10-18 | Host & Network Penetration Testing: System/Host Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | HTTP Basic Auth cracking (`bob`), WebDAV ASP webshell upload & execution, SMB brute-forcing (`administrator:pineapple`), Metasploit PsExec Meterpreter session, FreeRDP desktop access | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%201/README.md) |
 | 2026-10-28 | Host & Network Penetration Testing: Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | FlatCore CMS 2.0.7 Authenticated RCE (`50262.py`), OpenSSH brute-force (`iamaweakuser:angel`), WordPress Duplicator 1.3.26 Arbitrary File Read (CVE-2020-11738), Passwordless SSH access (`iamacrazyfreeuser`) | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%201/README.md) |
+| 2026-11-02 | Host & Network Penetration Testing: System/Host Based Attacks | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Apache mod_cgi Shellshock RCE (`CVE-2014-6271`), libssh authentication bypass (`CVE-2018-10933`), Metasploit payload delivery, SUID binary relative path execution hijacking (`welcome` &rarr; `greetings`), root elevation | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%202/README.md) |
 | 2026-10-30 | Web Application Penetration Testing: Introduction to Web & HTTP | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Local File Inclusion / Path Traversal (`view_file?file=/flag.txt`), Gobuster directory fuzzing (`/secured/`), THC-Hydra HTTP POST login brute-force (`guest:butterfly1`), SQL Injection authentication bypass (`admin' OR 1=1-- -`) | [Walkthrough](./Web%20Application%20Penetration%20Testing/Web%20Application%20Penetration%20Testing%20CTF%201/README.md) |
 | 2026-11-02 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Metasploit PostgreSQL DB integration, MSSQL CLR payload RCE (`mssql_clr_payload`), token privilege auditing (`SeImpersonatePrivilege`), PrintSpooler `getsystem` elevation, recursive System32 discovery | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF1/README.md) |
 
@@ -99,6 +100,12 @@
 - **Key Techniques:** Automated HTTP Basic Auth cracking with THC-Hydra (`bob`), WebDAV method and execution verification using DAVTest, interactive WebDAV file management via Cadaver, uploading an ASP webshell for remote command execution on IIS 10.0, SMB dictionary attack against Windows Server (`administrator:pineapple`), Metasploit PsExec service injection for Meterpreter access, and FreeRDP graphical administrative session.
 - **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
 - **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%201/README.md)
+
+#### Skill Check Lab 2: Apache CGI Shellshock, libssh Authentication Bypass & SUID Hijacking
+- **Scope:** `target1.ine.local` (`192.123.62.3`), `target2.ine.local` (`192.123.62.4`)
+- **Key Techniques:** Nmap network discovery and NSE Shellshock detection, DIRB directory enumeration discovering `/browser.cgi`, exploiting Apache mod_cgi Shellshock (`CVE-2014-6271`) via Metasploit to obtain initial shell access on Target 1, recovering root and hidden webroot flags, exploiting libssh Server Authentication Bypass (`CVE-2018-10933`) via Metasploit on Target 2, upgrading to interactive PTY shell (`user`), reverse-engineering custom SUID binary `/home/user/welcome`, and hijacking relative command execution (`greetings`) to escalate to root (`#`).
+- **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%202/README.md)
 
 <br>
 

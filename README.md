@@ -8,8 +8,8 @@
 
 [![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification - eJPT v2](https://img.shields.io/badge/Certification-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
-[![Labs Completed - 8 Labs](https://img.shields.io/badge/Labs%20Completed-8%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
-[![Flags Captured - 33 / 33](https://img.shields.io/badge/Flags%20Captured-33%20%2F%2033-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
+[![Labs Completed - 9 Labs](https://img.shields.io/badge/Labs%20Completed-9%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
+[![Flags Captured - 37 / 37](https://img.shields.io/badge/Flags%20Captured-37%20%2F%2037-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
 [![Methodology - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -51,7 +51,7 @@ The repository is organized into modular directories representing distinct certi
 
 | Certification Track | Platform / Learning Path | Status | Labs Completed | Flags Captured | Primary Focus | Directory Link |
 | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **8 Labs** | **33 / 33** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
+| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **9 Labs** | **37 / 37** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
 | **eCPPTv2** | **Penetration Testing Professional (PTP)** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, system exploitation, privilege escalation, reporting | `eCPPTv2/` *(Upcoming)* |
 | **eWPT** | **Web Application Penetration Testing (WAPT)** | 🟡 *Planned* | — | — | Web architectures, OWASP Top 10, SQLi, XSS, CSRF, session hijacking, API testing | `eWPT/` *(Upcoming)* |
 | **eCIR** | **Certified Incident Responder (CIR)** | 🟡 *Planned* | — | — | Threat detection, live host triage, memory analysis, log forensics, incident containment | `eCIR/` *(Upcoming)* |
@@ -85,7 +85,8 @@ INE/
     │   ├── README.md                          # Section Index & Syllabus
     │   ├── System-Host Based Attacks CTF 1/   # Lab 1: WebDAV, SMB & RDP (4/4 Flags)
     │   ├── Exploitation CTF 1/                # Lab 2: Web RCE, Hydra SSH & Duplicator LFI (4/4 Flags)
-    │   └── The Metasploit Framework CTF 1/    # Lab 3: MSSQL CLR RCE, Token Impersonation & SYSTEM (4/4 Flags)
+    │   ├── System-Host Based Attacks CTF 2/   # Lab 3: Shellshock RCE, libssh Auth Bypass & SUID PrivEsc (4/4 Flags)
+    │   └── The Metasploit Framework CTF 1/    # Lab 4: MSSQL CLR RCE, Token Impersonation & SYSTEM (4/4 Flags)
     ├── Web Application Penetration Testing/   # Section 5: Web Attacks & HTTP
     │   ├── README.md                          # Section Index & Syllabus
     │   └── Web Application Penetration Testing CTF 1/ # Lab 1: LFI, Directory Fuzzing, Hydra & SQLi (4/4 Flags)
