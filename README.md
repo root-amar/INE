@@ -8,8 +8,9 @@
 
 [![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification - eJPT v2](https://img.shields.io/badge/Certification-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
-[![Labs Completed - 10 Labs](https://img.shields.io/badge/Labs%20Completed-10%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
-[![Flags Captured - 41 / 41](https://img.shields.io/badge/Flags%20Captured-41%20%2F%2041-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
+[![Certification - eWPT](https://img.shields.io/badge/Certification-eWPT-blueviolet?style=for-the-badge&logo=target&logoColor=white)](./eWPT/README.md)
+[![Labs Completed - 11 Labs](https://img.shields.io/badge/Labs%20Completed-11%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flags Captured - 46 / 46](https://img.shields.io/badge/Flags%20Captured-46%20%2F%2046-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Methodology - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -53,7 +54,7 @@ The repository is organized into modular directories representing distinct certi
 | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
 | **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **10 Labs** | **41 / 41** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
 | **eCPPTv2** | **Penetration Testing Professional (PTP)** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, system exploitation, privilege escalation, reporting | `eCPPTv2/` *(Upcoming)* |
-| **eWPT** | **Web Application Penetration Testing (WAPT)** | 🟡 *Planned* | — | — | Web architectures, OWASP Top 10, SQLi, XSS, CSRF, session hijacking, API testing | `eWPT/` *(Upcoming)* |
+| **eWPT** | **Web Application Penetration Testing (WAPT)** | 🟢 **Active** | **1 Lab** | **5 / 5** | Web architectures, OWASP Top 10, SQLi, API testing, HTTP verbs, backup analysis | [📂 `eWPT/` Hub](./eWPT/README.md) |
 | **eCIR** | **Certified Incident Responder (CIR)** | 🟡 *Planned* | — | — | Threat detection, live host triage, memory analysis, log forensics, incident containment | `eCIR/` *(Upcoming)* |
 
 <br>
@@ -94,6 +95,12 @@ INE/
     ├── Active Directory Exploitation/         # Advanced Enterprise AD
     ├── Metasploit & Post Exploitation/        # Metasploit Framework & Payloads
     └── Exploit Development/                   # Buffer Overflows & Shellcoding
+│
+└── eWPT/                                      # eLearnSecurity Web Application Penetration Tester Track
+    ├── README.md                              # Dedicated eWPT Tracker & Course Roadmap
+    └── Web Application Pentesting Foundations/ # Foundations Module
+        ├── README.md                          # Foundations Module Index
+        └── Introduction to Web Application Security Testing/ # Lab 1: Recon, Backup Leak, API & SQLi (5/5 Flags)
 ```
 
 <br>

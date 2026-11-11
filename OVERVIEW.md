@@ -4,8 +4,9 @@
 
 [![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Track - eJPT v2 PTS](https://img.shields.io/badge/Track-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
-[![Labs Completed - 10 Labs](https://img.shields.io/badge/Completed%20Labs-10%20Documented-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
-[![Flags Captured - 41 / 41](https://img.shields.io/badge/Flags%20Captured-41%20%2F%2041%20(100%25)-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
+[![Track - eWPT](https://img.shields.io/badge/Track-eWPT-blueviolet?style=for-the-badge&logo=target&logoColor=white)](./eWPT/README.md)
+[![Labs Completed - 11 Labs](https://img.shields.io/badge/Completed%20Labs-11%20Documented-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flags Captured - 46 / 46](https://img.shields.io/badge/Flags%20Captured-46%20%2F%2046%20(100%25)-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Framework - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 [![Status - Actively Maintained](https://img.shields.io/badge/Status-Actively%20Maintained-blue?style=for-the-badge&logo=git&logoColor=white)](https://github.com/root-amar/INE)
 
@@ -84,6 +85,12 @@ INE/
     └── Web Application Penetration Testing/   # Section 5: Web Vulnerabilities & Exploitation
         ├── README.md                          # Section Index, Course Syllabus & Lab Matrix
         └── Web Application Penetration Testing CTF 1/ # Lab 1: LFI, Gobuster, Hydra & SQLi Bypass (4/4 Flags)
+│
+└── eWPT/                                      # eLearnSecurity Certified Web Application Penetration Tester
+    ├── README.md                              # Dedicated eWPT Tracker & Course Roadmap
+    └── Web Application Pentesting Foundations/ # Foundations Module
+        ├── README.md                          # Foundations Module Index
+        └── Introduction to Web Application Security Testing/ # Lab 1: Recon, Backup Leak, API & SQLi (5/5 Flags)
 ```
 
 ---
@@ -95,8 +102,8 @@ The portfolio is architected to house multiple INE / eLearnSecurity learning pat
 | Track Identifier | Certification Name | Status | Documented Labs | Flags Captured | Primary Knowledge Domains |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | **eJPT v2** | **eLearnSecurity Junior Penetration Tester** | 🟢 **Active** | **10 Completed** | **41 / 41 (100%)** | Assessment methodologies, host/network exploitation, web applications, Metasploit |
+| **eWPT** | **eLearnSecurity Web Application Penetration Tester** | 🟢 **Active** | **1 Completed** | **5 / 5 (100%)** | OWASP Top 10, deep SQLi, XSS, CSRF, REST API auditing, HTTP verbs, backup analysis |
 | **eCPPT v2** | **eLearnSecurity Certified Professional Penetration Tester** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, privilege escalation, AV evasion, buffer overflows |
-| **eWPT** | **eLearnSecurity Web Application Penetration Tester** | 🟡 *Planned* | — | — | OWASP Top 10, deep SQLi, XSS, CSRF, SSRF, XML/XXE, session flaws, API penetration testing |
 | **eCIR** | **eLearnSecurity Certified Incident Responder** | 🟡 *Planned* | — | — | Network traffic triage, live endpoint analysis, memory forensics, log threat hunting |
 
 ---
@@ -294,6 +301,11 @@ The repository actively contains staging environments and evidence screenshots f
 | **39** | MSF CTF 2 | Target 1 Linux | Confidential Backup File Read | CWE-200 | 7.5 High | T1552 Unsecured Credentials | `FLAG2_dbe158bba6854efe909196d8ffc08746` |
 | **40** | MSF CTF 2 | Target 2 Linux | Roxy-WI Unauth Command Inject | CVE-2022-31137 | 9.8 Critical | T1190 Exploit Public-Facing App | `FLAG3_2ccfd032f5c54caa92983bfeec4163ca` |
 | **41** | MSF CTF 2 | Target 2 Linux | Cron Job Privilege Forensics | CWE-732 | 7.8 High | T1053.003 Scheduled Task: Cron | `FLAG4_020f687cc2c34f1b8dd80064427d982a` |
+| **42** | eWPT CTF 1 | SecureBlog Web | Crawler robots.txt Disclosure | CWE-200 | 5.3 Medium | T1596 Search Open Technical Databases | `FLAG1_75865932c97343489398e18e6fc5890b` |
+| **43** | eWPT CTF 1 | SecureBlog Web | Open Directory Backup Leak | CWE-548 | 7.5 High | T1083 File and Directory Discovery | `FLAG2_181371a340f44c4e80b85c233d5fed65` |
+| **44** | eWPT CTF 1 | SecureBlog Web | Response Header Flag Leak | CWE-200 | 5.3 Medium | T1592 Gather Victim Host Info | `FLAG3_b210aa5b3e66476a8fb9bcf0007b369f` |
+| **45** | eWPT CTF 1 | SecureBlog Web | Insecure API HTTP Method | CWE-650 | 5.3 Medium | T1190 Exploit Public-Facing App | `FLAG4_0132f3a2d3db4486bf5ab7d7bf00fda8` |
+| **46** | eWPT CTF 1 | SecureBlog Web | SQLite Injection in Search | CWE-89 | 9.8 Critical | T1190 Exploit Public-Facing App | `FLAG5_b06d6909878143cd807592b361f052a3` |
 
 ---
 
