@@ -4,8 +4,8 @@
 
 [![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Track - eJPT v2 PTS](https://img.shields.io/badge/Track-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
-[![Labs Completed - 8 Labs](https://img.shields.io/badge/Completed%20Labs-8%20Documented-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
-[![Flags Captured - 33 / 33](https://img.shields.io/badge/Flags%20Captured-33%20%2F%2033%20(100%25)-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
+[![Labs Completed - 10 Labs](https://img.shields.io/badge/Completed%20Labs-10%20Documented-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./eJPT/README.md)
+[![Flags Captured - 41 / 41](https://img.shields.io/badge/Flags%20Captured-41%20%2F%2041%20(100%25)-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./eJPT/README.md)
 [![Framework - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 [![Status - Actively Maintained](https://img.shields.io/badge/Status-Actively%20Maintained-blue?style=for-the-badge&logo=git&logoColor=white)](https://github.com/root-amar/INE)
 
@@ -74,11 +74,11 @@ INE/
     │   ├── README.md                          # Section Index, Course Syllabus & Lab Matrix
     │   ├── System-Host Based Attacks CTF 1/   # Lab 1: WebDAV ASP Shell & PsExec Meterpreter (4/4 Flags)
     │   ├── Exploitation CTF 1/                # Lab 2: FlatCore CMS RCE, SSH & CVE-2020-11738 (4/4 Flags)
-    │   ├── The Metasploit Framework CTF 1/    # Lab 3: MSSQL CLR RCE & Token Impersonation (4/4 Flags)
+    │   ├── System-Host Based Attacks CTF 2/   # Lab 3: Shellshock RCE, libssh Auth Bypass & SUID PrivEsc (4/4 Flags)
+    │   ├── The Metasploit Framework CTF 1/    # Lab 4: MSSQL CLR RCE & Token Impersonation (4/4 Flags)
+    │   ├── The Metasploit Framework CTF 2/    # Lab 5: RSYNC Misconfig, Roxy-WI RCE & Cron Forensics (4/4 Flags)
     │   │
-    │   ├── [QUEUE] Network Based Attacks CTF 1/       # Lab 4: In-Progress / Queued
-    │   ├── [QUEUE] System-Host Based Attacks CTF 2/   # Lab 5: In-Progress / Queued
-    │   ├── [QUEUE] The Metasploit Framework CTF 2/    # Lab 6: In-Progress / Queued
+    │   ├── [QUEUE] Network Based Attacks CTF 1/       # Lab 6: In-Progress / Queued
     │   └── [QUEUE] Post-Exploitation CTF 1/           # Lab 7: In-Progress / Queued
     │
     └── Web Application Penetration Testing/   # Section 5: Web Vulnerabilities & Exploitation
@@ -94,7 +94,7 @@ The portfolio is architected to house multiple INE / eLearnSecurity learning pat
 
 | Track Identifier | Certification Name | Status | Documented Labs | Flags Captured | Primary Knowledge Domains |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **eJPT v2** | **eLearnSecurity Junior Penetration Tester** | 🟢 **Active** | **8 Completed** | **33 / 33 (100%)** | Assessment methodologies, host/network exploitation, web applications, Metasploit |
+| **eJPT v2** | **eLearnSecurity Junior Penetration Tester** | 🟢 **Active** | **10 Completed** | **41 / 41 (100%)** | Assessment methodologies, host/network exploitation, web applications, Metasploit |
 | **eCPPT v2** | **eLearnSecurity Certified Professional Penetration Tester** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, privilege escalation, AV evasion, buffer overflows |
 | **eWPT** | **eLearnSecurity Web Application Penetration Tester** | 🟡 *Planned* | — | — | OWASP Top 10, deep SQLi, XSS, CSRF, SSRF, XML/XXE, session flaws, API penetration testing |
 | **eCIR** | **eLearnSecurity Certified Incident Responder** | 🟡 *Planned* | — | — | Network traffic triage, live endpoint analysis, memory forensics, log threat hunting |
@@ -107,13 +107,13 @@ The portfolio is architected to house multiple INE / eLearnSecurity learning pat
 
 ```text
 ========================================================================================
-  eJPT CURRICULUM PROGRESS: 8 COMPLETED LABS | 33 / 33 FLAGS CAPTURED (100% SUCCESS)
+  eJPT CURRICULUM PROGRESS: 10 COMPLETED LABS | 41 / 41 FLAGS CAPTURED (100% SUCCESS)
 ========================================================================================
   [+] Section 2: Assessment Methodologies            -> 4 Labs  | 17 Flags  [COMPLETED]
-  [+] Section 4: Host & Network Penetration Testing  -> 3 Labs  | 12 Flags  [ACTIVE / EXPANDING]
+  [+] Section 4: Host & Network Penetration Testing  -> 5 Labs  | 20 Flags  [ACTIVE / EXPANDING]
   [+] Section 5: Web Application Penetration Testing -> 1 Lab   |  4 Flags  [COMPLETED]
   --------------------------------------------------------------------------------------
-  TOTAL COMPLETED DOCUMENTATION                       -> 8 Labs  | 33 Flags  [100% SOLVED]
+  TOTAL COMPLETED DOCUMENTATION                       -> 10 Labs | 41 Flags  [100% SOLVED]
 ========================================================================================
 ```
 
@@ -200,6 +200,26 @@ Focused on vulnerability exploitation, remote command execution, credential acce
   - Flag 4: `d8b5eff0087e4efeababa6164e8f1f0a` (Located in hidden Administrator profile subdirectory)
 - **Walkthrough Document:** [`eJPT/Host & Network Penetration Testing/The Metasploit Framework CTF1/README.md`](./eJPT/Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF1/README.md)
 
+#### 4. System-Host Based Attacks CTF 2 (Apache Shellshock, libssh Bypass & SUID Hijacking)
+- **Target:** Multi-Target Linux Network (`192.123.62.3`, `192.123.62.4`)
+- **Key Vectors:** Apache mod_cgi Shellshock RCE (`CVE-2014-6271`), libssh authentication bypass (`CVE-2018-10933`), Metasploit payload delivery, SUID binary relative path execution hijacking (`welcome` &rarr; `greetings`), interactive root elevation.
+- **Flags Captured (4/4):**
+  - Flag 1: `FLAG1_7926030658704c41958f523a9f604991` (Target 1 root directory flag via Shellshock)
+  - Flag 2: `FLAG2_ed9693813add41cd9f4e7a877c806c5a` (Target 1 hidden webroot file `.flag.txt`)
+  - Flag 3: `FLAG3_8b813e38d09d421491a887c9ebc40e62` (Target 2 user home directory flag via libssh bypass)
+  - Flag 4: `FLAG4_01f9219c7c4a4ef6aff75cf080ef9b49` (Target 2 root flag via SUID PATH hijacking)
+- **Walkthrough Document:** [`eJPT/Host & Network Penetration Testing/System-Host Based Attacks CTF 2/README.md`](./eJPT/Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%202/README.md)
+
+#### 5. The Metasploit Framework CTF 2 (RSYNC Misconfiguration, Roxy-WI RCE & Cron Task Forensics)
+- **Target:** Multi-Target Linux Network (`192.211.160.3`, `192.211.160.4`)
+- **Key Vectors:** RSYNC daemon anonymous module extraction, unauthenticated synchronization of confidential backup files, Metasploit Roxy-WI command injection exploit (`CVE-2022-31137`), Python Meterpreter reverse shell, `/etc/cron.d` automated scheduled task auditing.
+- **Flags Captured (4/4):**
+  - Flag 1: `FLAG1_a8762fae407e4acb95cefa003df81dd5` (RSYNC module banner disclosure)
+  - Flag 2: `FLAG2_dbe158bba6854efe909196d8ffc08746` (Extracted confidential file `pii_data.xlsx`)
+  - Flag 3: `FLAG3_2ccfd032f5c54caa92983bfeec4163ca` (Roxy-WI RCE meterpreter shell on Target 2 `/flag.txt`)
+  - Flag 4: `FLAG4_020f687cc2c34f1b8dd80064427d982a` (Automated cron script `/etc/cron.d/www-data-cron`)
+- **Walkthrough Document:** [`eJPT/Host & Network Penetration Testing/The Metasploit Framework CTF 2/README.md`](./eJPT/Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF%202/README.md)
+
 ---
 
 ### Section 5: Web Application Penetration Testing (1 Lab | 4 Flags)
@@ -224,10 +244,8 @@ The repository actively contains staging environments and evidence screenshots f
 
 | Queue ID | Section & Module | Lab Name | Evidence Status | Planned Methodologies |
 | :---: | :--- | :--- | :---: | :--- |
-| **Q1** | Host & Network: System Attacks | `System-Host Based Attacks CTF 2` | 19 Screenshots | Windows host privilege escalation, service misconfiguration, token manipulation |
-| **Q2** | Host & Network: Network Attacks | `Network Based Attacks CTF 1` | 6 Screenshots | ARP spoofing, man-in-the-middle (MITM), network protocol sniffing, packet capture |
-| **Q3** | Host & Network: Metasploit | `The Metasploit Framework CTF 2` | 14 Screenshots | Multi-stage payload generation, meterpreter pivoting, advanced route staging |
-| **Q4** | Host & Network: Post-Exploitation | `Post-Exploitation CTF 1` | 5 Screenshots | Local credential harvesting, persistence establishment, lateral enumeration |
+| **Q1** | Host & Network: Network Attacks | `Network Based Attacks CTF 1` | 6 Screenshots | ARP spoofing, man-in-the-middle (MITM), network protocol sniffing, packet capture |
+| **Q2** | Host & Network: Post-Exploitation | `Post-Exploitation CTF 1` | 5 Screenshots | Local credential harvesting, persistence establishment, lateral enumeration |
 
 ---
 
@@ -268,6 +286,14 @@ The repository actively contains staging environments and evidence screenshots f
 | **31** | Web App CTF 1 | LAMP Stack | Hidden Path Discovery | CWE-548 | 5.3 Medium | T1083 File and Directory Discovery | `FLAG2_GOBUSTER_SECURED_DIR` |
 | **32** | Web App CTF 1 | LAMP Stack | HTTP POST Brute Force | CWE-307 | 7.5 High | T1110.001 Password Guessing | `FLAG3_HYDRA_HTTP_POST_LOGIN` |
 | **33** | Web App CTF 1 | LAMP Stack | SQL Injection Auth Bypass | CWE-89 | 9.8 Critical | T1190 Exploit Public-Facing App | `FLAG4_SQLI_AUTH_BYPASS_ADMIN` |
+| **34** | System Attacks 2 | Target 1 Linux | Apache mod_cgi Shellshock | CVE-2014-6271 | 9.8 Critical | T1190 Exploit Public-Facing App | `FLAG1_7926030658704c41958f523a9f604991` |
+| **35** | System Attacks 2 | Target 1 Linux | Hidden Webroot File | CWE-200 | 5.3 Medium | T1083 File and Directory Discovery | `FLAG2_ed9693813add41cd9f4e7a877c806c5a` |
+| **36** | System Attacks 2 | Target 2 Linux | libssh Server Auth Bypass | CVE-2018-10933 | 9.1 Critical | T1212 Exploitation for Credential Access | `FLAG3_8b813e38d09d421491a887c9ebc40e62` |
+| **37** | System Attacks 2 | Target 2 Linux | SUID Binary Execution Hijack | CWE-426 | 7.8 High | T1548.001 Setuid and Setgid | `FLAG4_01f9219c7c4a4ef6aff75cf080ef9b49` |
+| **38** | MSF CTF 2 | Target 1 Linux | Unauthenticated RSYNC Daemon | CWE-306 | 7.5 High | T1083 File and Directory Discovery | `FLAG1_a8762fae407e4acb95cefa003df81dd5` |
+| **39** | MSF CTF 2 | Target 1 Linux | Confidential Backup File Read | CWE-200 | 7.5 High | T1552 Unsecured Credentials | `FLAG2_dbe158bba6854efe909196d8ffc08746` |
+| **40** | MSF CTF 2 | Target 2 Linux | Roxy-WI Unauth Command Inject | CVE-2022-31137 | 9.8 Critical | T1190 Exploit Public-Facing App | `FLAG3_2ccfd032f5c54caa92983bfeec4163ca` |
+| **41** | MSF CTF 2 | Target 2 Linux | Cron Job Privilege Forensics | CWE-732 | 7.8 High | T1053.003 Scheduled Task: Cron | `FLAG4_020f687cc2c34f1b8dd80064427d982a` |
 
 ---
 

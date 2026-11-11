@@ -9,8 +9,8 @@
   <p><b>Platform:</b> INE Security | <b>Track:</b> Penetration Testing Student (eJPT v2)</p>
 
 [![Section - Host & Network Pentesting](https://img.shields.io/badge/Section-Host%20%26%20Network%20Pentesting-blue?style=flat-square&logo=target)](./README.md)
-[![Labs Completed](https://img.shields.io/badge/Completed-4%20Labs-success?style=flat-square&logo=checkmarx)](./README.md)
-[![Total Flags](https://img.shields.io/badge/Flags%20Captured-16%20%2F%2016-brightgreen?style=flat-square)](./README.md)
+[![Labs Completed](https://img.shields.io/badge/Completed-5%20Labs-success?style=flat-square&logo=checkmarx)](./README.md)
+[![Total Flags](https://img.shields.io/badge/Flags%20Captured-20%20%2F%2020-brightgreen?style=flat-square)](./README.md)
 </div>
 
 ---
@@ -36,6 +36,7 @@ This section covers offensive techniques and methodologies for compromising host
 | 2026-10-28 | Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | FlatCore CMS 2.0.7 Authenticated RCE (`50262.py`), OpenSSH brute-force (`iamaweakuser:angel`), WordPress Duplicator 1.3.26 Arbitrary File Read (CVE-2020-11738), Passwordless SSH access (`iamacrazyfreeuser`) | [Read Walkthrough](./Exploitation%20CTF%201/README.md) |
 | 2026-11-02 | System/Host Based Attacks | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Apache mod_cgi Shellshock RCE (`CVE-2014-6271`), libssh authentication bypass (`CVE-2018-10933`), Metasploit payload delivery, SUID binary relative path execution hijacking (`welcome` &rarr; `greetings`), root elevation | [Read Walkthrough](./System-Host%20Based%20Attacks%20CTF%202/README.md) |
 | 2026-11-02 | The Metasploit Framework (MSF) | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Metasploit PostgreSQL DB integration, MSSQL CLR payload RCE (`mssql_clr_payload`), token privilege auditing (`SeImpersonatePrivilege`), PrintSpooler `getsystem` elevation, recursive System32 discovery | [Read Walkthrough](./The%20Metasploit%20Framework%20CTF1/README.md) |
+| 2026-11-03 | The Metasploit Framework (MSF) | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Unauthenticated RSYNC service enumeration & sensitive backup sync, Roxy-WI RCE (CVE-2022-31137), Meterpreter interactive command shell, /etc/cron.d scheduled task auditing | [Read Walkthrough](./The%20Metasploit%20Framework%20CTF%202/README.md) |
 
 <br>
 
