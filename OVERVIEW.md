@@ -102,7 +102,7 @@ The portfolio is architected to house multiple INE / eLearnSecurity learning pat
 | Track Identifier | Certification Name | Status | Documented Labs | Flags Captured | Primary Knowledge Domains |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | **eJPT v2** | **eLearnSecurity Junior Penetration Tester** | 🟢 **Active** | **10 Completed** | **41 / 41 (100%)** | Assessment methodologies, host/network exploitation, web applications, Metasploit |
-| **eWPT** | **eLearnSecurity Web Application Penetration Tester** | 🟢 **Active** | **1 Completed** | **5 / 5 (100%)** | OWASP Top 10, deep SQLi, XSS, CSRF, REST API auditing, HTTP verbs, backup analysis |
+| **eWPT** | **eLearnSecurity Web Application Penetration Tester** | 🟢 **Active** | **2 Completed** | **13 / 13 (100%)** | OWASP Top 10, deep SQLi, XSS, CSRF, REST API auditing, HTTP verbs, backup analysis, DNS AXFR |
 | **eCPPT v2** | **eLearnSecurity Certified Professional Penetration Tester** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, privilege escalation, AV evasion, buffer overflows |
 | **eCIR** | **eLearnSecurity Certified Incident Responder** | 🟡 *Planned* | — | — | Network traffic triage, live endpoint analysis, memory forensics, log threat hunting |
 
@@ -306,6 +306,14 @@ The repository actively contains staging environments and evidence screenshots f
 | **44** | eWPT CTF 1 | SecureBlog Web | Response Header Flag Leak | CWE-200 | 5.3 Medium | T1592 Gather Victim Host Info | `FLAG3_b210aa5b3e66476a8fb9bcf0007b369f` |
 | **45** | eWPT CTF 1 | SecureBlog Web | Insecure API HTTP Method | CWE-650 | 5.3 Medium | T1190 Exploit Public-Facing App | `FLAG4_0132f3a2d3db4486bf5ab7d7bf00fda8` |
 | **46** | eWPT CTF 1 | SecureBlog Web | SQLite Injection in Search | CWE-89 | 9.8 Critical | T1190 Exploit Public-Facing App | `FLAG5_b06d6909878143cd807592b361f052a3` |
+| **47** | eWPT CTF 2 | NovaCMS Web | Sitemap XML Build Token Leak | CWE-200 | 5.3 Medium | T1596 Search Open Technical Databases | `FLAG1_ef57cd89835d48239e220689716f94d5` |
+| **48** | eWPT CTF 2 | NovaCMS Web | phpinfo.php Debug Script Leak | CWE-552 | 5.3 Medium | T1592 Gather Victim Host Info | `FLAG2_1cd673f8e84b4298b6f5d142ca50518a` |
+| **49** | eWPT CTF 2 | NovaCMS Web | Staff Open Directory & Backup Leak | CWE-548 | 7.5 High | T1083 File and Directory Discovery | `FLAG3_82cf35de3b454877a6ca1a51e59f8b11` |
+| **50** | eWPT CTF 2 | NovaCMS Web | Static JS Build Configuration Leak | CWE-200 | 5.3 Medium | T1005 Data from Local System | `FLAG4_927de4c8b3704caaa35cbafccb78ec4c` |
+| **51** | eWPT CTF 2 | NovaCMS Web | Sarah Chen Account Portal Access | CWE-522 | 7.5 High | T1078.003 Local Accounts | `FLAG5_5a62f5e868f14eba8dee0532b1a43b82` |
+| **52** | eWPT CTF 2 | NovaCMS Web | Exposed Production .env File | CWE-522 | 7.5 High | T1552.001 Credentials In Files | `FLAG6_5a75da50cfd746a686960da55d209253` |
+| **53** | eWPT CTF 2 | NovaCMS Web | Factory-Default Admin Credential Bypass | CWE-1188 | 9.8 Critical | T1110.001 Default Credentials | `FLAG7_d9f17e8bbd234684aacd32901a73f6b8` |
+| **54** | eWPT CTF 2 | Target DNS (Port 53) | Unrestricted DNS Zone Transfer (AXFR) | CWE-200 | 5.3 Medium | T1590.002 Gather Victim Network Info: DNS | `FLAG8_e809cea8e3474d7099575eb36ddd61b8` |
 
 ---
 
