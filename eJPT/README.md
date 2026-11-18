@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-11%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-47%20%2F%2047-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-13%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-56%20%2F%2056-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -30,9 +30,9 @@
 | **Learning Path** | **Penetration Testing Student (PTS)** |
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
 | **Active Sections** | **Section 2: Assessment Methodologies**, **Section 4: Host & Network Penetration Testing**, **Section 5: Web Application Penetration Testing** |
-| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Network Based Attacks**, **Exploitation**, **The Metasploit Framework**, **Introduction to Web & HTTP** |
-| **Skill Checks Completed** | **11 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **47 / 47** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in HN Lab 4, 4 in HN Lab 5, 6 in HN Lab 6, 4 in WA Lab 1) |
+| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Network Based Attacks**, **Exploitation**, **The Metasploit Framework**, **Post-Exploitation**, **Introduction to Web & HTTP** |
+| **Skill Checks Completed** | **13 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **56 / 56** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in HN Lab 4, 4 in HN Lab 5, 6 in HN Lab 6, 5 in HN Lab 7, 4 in HN Lab 8, 4 in WA Lab 1) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -54,6 +54,8 @@
 | 2026-11-02 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Metasploit PostgreSQL DB integration, MSSQL CLR payload RCE (`mssql_clr_payload`), token privilege auditing (`SeImpersonatePrivilege`), PrintSpooler `getsystem` elevation, recursive System32 discovery | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF1/README.md) |
 | 2026-11-03 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Unauthenticated RSYNC service enumeration & sensitive backup sync, Roxy-WI unauthenticated RCE (CVE-2022-31137), Meterpreter interactive command shell, /etc/cron.d scheduled task forensics | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF%202/README.md) |
 | 2026-11-18 | Host & Network Penetration Testing: Network Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 6 / 6 | Source port filter bypass (`Ncat -p 53`), SNMP community brute-force (`mngt`), SMB anonymous share enumeration, Hydra password attack (`svc_backup:chocolate`), SSH dynamic SOCKS pivoting (`-D 1080`), Proxychains internal file server compromise (`db_admin:Sql!Backup2024`) | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Network%20Based%20Attacks%20CTF%201/README.md) |
+| 2026-11-18 | Host & Network Penetration Testing: Post-Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 5 / 5 | libssh Authentication Bypass (CVE-2018-10933), Linux local host enumeration (`/etc/passwd`, `/etc/group`, `/etc/cron.d`), world-writable `/etc/shadow` privilege escalation, OpenSSL custom password hash injection, root account compromise | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%201/README.md) |
+| 2026-11-18 | Host & Network Penetration Testing: Post-Exploitation | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Windows OpenSSH Hydra password attack (`alice:princess1`), SAM registry / hashdump extraction, John the Ripper NTLM cracking (`david:orange`), SeImpersonatePrivilege exploitation via PrintSpoofer64, NT AUTHORITY\SYSTEM elevation | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%202/README.md) |
 
 <br>
 
@@ -137,6 +139,32 @@
 
 <br>
 
+### 🎯 Course: Network-Based Attacks
+
+#### Skill Check Lab 1 (CTF 1): Source Port Evasion, SNMP Community Brute-Force & SSH SOCKS Pivoting
+- **Scope:** `target1.ine.local` (`10.5.20.178`), `target2.ine.local` (`10.5.20.179`)
+- **Key Techniques:** Bypassing stateful firewall / iptables rules via source port 53 (`ncat -p 53`), SNMP community string brute-force with `onesixtyone` recovering `mngt`, anonymous SMB share enumeration, THC-Hydra password attacks against Linux SSH (`svc_backup:chocolate`), establishing dynamic SSH SOCKS pivoting (`-D 1080`), and routing Proxychains through to the isolated internal target (`10.5.20.179`) to extract SQL backup credentials (`db_admin:Sql!Backup2024`).
+- **Flags Captured:** 6 of 6 (`FLAG1` to `FLAG6` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Network%20Based%20Attacks%20CTF%201/README.md)
+
+<br>
+
+### 🎯 Course: Post-Exploitation
+
+#### Skill Check Lab 1 (CTF 1): Linux Local Enumeration, libssh Auth Bypass & World-Writable /etc/shadow
+- **Scope:** `target1.ine.local` (`192.120.249.4`), `target2.ine.local` (`192.120.249.3`)
+- **Key Techniques:** Exploiting libssh Server Authentication Bypass (`CVE-2018-10933`) via Metasploit module `auxiliary/scanner/ssh/libssh_auth_bypass` to compromise Target 1, deep local enumeration across `/etc/passwd`, `/etc/group`, `/etc/cron.d/`, and `/etc/hosts`, extracting plaintext lateral credentials (`john:Pass@john123`) from `/home/user/credentials.txt`, authenticating to Target 2, identifying misconfigured world-writable permissions on `/etc/shadow`, generating custom SHA-512 root password hash via `openssl passwd -1 -salt abc password`, replacing the root hash in `/etc/shadow`, elevating to root (`su root`), and extracting the final flag.
+- **Flags Captured:** 5 of 5 (`FLAG1` to `FLAG5` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%201/README.md)
+
+#### Skill Check Lab 2 (CTF 2): Windows OpenSSH Brute-Force, SAM Hash Cracking & PrintSpoofer SYSTEM PrivEsc
+- **Scope:** `target.ine.local` (`WIN-GQ7PTVEC6HL` / `10.5.22.199`)
+- **Key Techniques:** Nmap service discovery identifying Windows Server 2012 R2 running OpenSSH for Windows (22/tcp), MSRPC (135/tcp), SMB (445/tcp), and RDP (3389/tcp), conducting targeted SSH dictionary attack using THC-Hydra with `unix_passwords.txt` recovering `alice:princess1`, extracting Flag 1 from Alice's profile, retrieving SAM registry backup hashes from `C:\Users\alice\hashdump.txt`, cracking David's NTLM hash with John the Ripper (`rockyou.txt`) yielding `david:orange`, logging in as David to capture Flag 2, auditing user token rights to identify enabled `SeImpersonatePrivilege`, transferring `PrintSpoofer64.exe` via SCP, weaponizing named pipe impersonation to spawn an interactive shell as `NT AUTHORITY\SYSTEM`, extracting Flag 3 from `C:\Windows\System32\config\flag3.txt`, and navigating the hidden folder structure to extract Flag 4 from `C:\Users\Administrator\flag\flag4.txt`.
+- **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%202/README.md)
+
+<br>
+
 ---
 
 ## 🔬 Course Breakdown: Web Application Penetration Testing
@@ -177,13 +205,16 @@ Official curriculum tracking directly aligned with the INE training portal:
 - [x] **Host & Network Penetration Testing: System/Host Based Attacks** *(20h 28m | Alexis Ahmed)*
   - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
   - [x] **Skill Check Lab 2** *(4/4 Flags Captured)*
-- [ ] **Host & Network Penetration Testing: Network-Based Attacks** *(4h 47m | Alexis Ahmed)*
+- [x] **Host & Network Penetration Testing: Network-Based Attacks** *(4h 47m | Alexis Ahmed)*
+  - [x] **Skill Check Lab 1** *(6/6 Flags Captured)*
 - [x] **Host & Network Penetration Testing: The Metasploit Framework (MSF)** *(35h 29m | Alexis Ahmed)*
   - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
   - [x] **Skill Check Lab 2** *(4/4 Flags Captured)*
 - [x] **Host & Network Penetration Testing: Exploitation** *(20h 49m | Alexis Ahmed)*
   - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
-- [ ] **Host & Network Penetration Testing: Post-Exploitation** *(26h 33m | Alexis Ahmed)*
+- [x] **Host & Network Penetration Testing: Post-Exploitation** *(26h 33m | Alexis Ahmed)*
+  - [x] **Skill Check Lab 1** *(5/5 Flags Captured)*
+  - [x] **Skill Check Lab 2** *(4/4 Flags Captured)*
 - [ ] **Host & Network Penetration Testing: Social Engineering** *(3h 11m | Alexis Ahmed)*
 
 ### 🌐 Section 5: Web Application Penetration Testing

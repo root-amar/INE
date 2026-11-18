@@ -9,8 +9,8 @@
 [![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification - eJPT v2](https://img.shields.io/badge/Certification-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
 [![Certification - eWPT](https://img.shields.io/badge/Certification-eWPT-blueviolet?style=for-the-badge&logo=target&logoColor=white)](./eWPT/README.md)
-[![Labs Completed - 13 Labs](https://img.shields.io/badge/Labs%20Completed-13%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flags Captured - 60 / 60](https://img.shields.io/badge/Flags%20Captured-60%20%2F%2060-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Completed - 15 Labs](https://img.shields.io/badge/Labs%20Completed-15%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flags Captured - 69 / 69](https://img.shields.io/badge/Flags%20Captured-69%20%2F%2069-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Methodology - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -52,7 +52,7 @@ The repository is organized into modular directories representing distinct certi
 
 | Certification Track | Platform / Learning Path | Status | Labs Completed | Flags Captured | Primary Focus | Directory Link |
 | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **11 Labs** | **47 / 47** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
+| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **13 Labs** | **56 / 56** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
 | **eCPPTv2** | **Penetration Testing Professional (PTP)** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, system exploitation, privilege escalation, reporting | `eCPPTv2/` *(Upcoming)* |
 | **eWPT** | **Web Application Penetration Testing (WAPT)** | 🟢 **Active** | **2 Labs** | **13 / 13** | Web architectures, OWASP Top 10, SQLi, API testing, HTTP verbs, backup analysis | [📂 `eWPT/` Hub](./eWPT/README.md) |
 | **eCIR** | **Certified Incident Responder (CIR)** | 🟡 *Planned* | — | — | Threat detection, live host triage, memory analysis, log forensics, incident containment | `eCIR/` *(Upcoming)* |
@@ -88,7 +88,10 @@ INE/
     │   ├── Exploitation CTF 1/                # Lab 2: Web RCE, Hydra SSH & Duplicator LFI (4/4 Flags)
     │   ├── System-Host Based Attacks CTF 2/   # Lab 3: Shellshock RCE, libssh Auth Bypass & SUID PrivEsc (4/4 Flags)
     │   ├── The Metasploit Framework CTF 1/    # Lab 4: MSSQL CLR RCE, Token Impersonation & SYSTEM (4/4 Flags)
-    │   └── The Metasploit Framework CTF 2/    # Lab 5: RSYNC Misconfig, Roxy-WI RCE & Cron Forensics (4/4 Flags)
+    │   ├── The Metasploit Framework CTF 2/    # Lab 5: RSYNC Misconfig, Roxy-WI RCE & Cron Forensics (4/4 Flags)
+    │   ├── Network Based Attacks CTF 1/       # Lab 6: Source Port Bypass, SNMP & SSH SOCKS (6/6 Flags)
+    │   ├── Post-Exploitation CTF 1/           # Lab 7: Linux Recon, libssh & Writable /etc/shadow (5/5 Flags)
+    │   └── Post-Exploitation CTF 2/           # Lab 8: Windows OpenSSH, SAM Cracking & PrintSpoofer (4/4 Flags)
     ├── Web Application Penetration Testing/   # Section 5: Web Attacks & HTTP
     │   ├── README.md                          # Section Index & Syllabus
     │   └── Web Application Penetration Testing CTF 1/ # Lab 1: LFI, Directory Fuzzing, Hydra & SQLi (4/4 Flags)
@@ -125,6 +128,11 @@ INE/
 | 2026-10-28 | Host & Network Penetration Testing: Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | FlatCore CMS 2.0.7 Authenticated RCE (`50262.py`), OpenSSH brute-force (`iamaweakuser:angel`), WordPress Duplicator 1.3.26 Arbitrary File Read (CVE-2020-11738), Passwordless SSH access (`iamacrazyfreeuser`) | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%201/README.md) |
 | 2026-10-30 | Web Application Penetration Testing: Introduction to Web & HTTP | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Local File Inclusion / Path Traversal (`view_file?file=/flag.txt`), Gobuster directory fuzzing (`/secured/`), THC-Hydra HTTP POST login brute-force (`guest:butterfly1`), SQL Injection authentication bypass (`admin' OR 1=1-- -`) | [Read Walkthrough](./eJPT/Web%20Application%20Penetration%20Testing/Web%20Application%20Penetration%20Testing%20CTF%201/README.md) |
 | 2026-11-02 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Metasploit PostgreSQL DB integration, MSSQL CLR payload RCE (`mssql_clr_payload`), token privilege auditing (`SeImpersonatePrivilege`), PrintSpooler `getsystem` elevation, recursive System32 discovery | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF1/README.md) |
+| 2026-11-02 | Host & Network Penetration Testing: System/Host Based Attacks | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Apache mod_cgi Shellshock RCE (`CVE-2014-6271`), libssh authentication bypass (`CVE-2018-10933`), Metasploit payload delivery, SUID binary relative path execution hijacking (`welcome` &rarr; `greetings`), root elevation | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/System-Host%20Based%20Attacks%20CTF%202/README.md) |
+| 2026-11-03 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Unauthenticated RSYNC service enumeration & sensitive backup sync, Roxy-WI unauthenticated RCE (CVE-2022-31137), Meterpreter interactive command shell, /etc/cron.d scheduled task forensics | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF%202/README.md) |
+| 2026-11-18 | Host & Network Penetration Testing: Network Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 6 / 6 | Source port filter bypass (`Ncat -p 53`), SNMP community brute-force (`mngt`), SMB anonymous share enumeration, Hydra password attack (`svc_backup:chocolate`), SSH dynamic SOCKS pivoting (`-D 1080`), Proxychains internal file server compromise (`db_admin:Sql!Backup2024`) | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/Network%20Based%20Attacks%20CTF%201/README.md) |
+| 2026-11-18 | Host & Network Penetration Testing: Post-Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 5 / 5 | libssh Authentication Bypass (CVE-2018-10933), Linux local host enumeration (`/etc/passwd`, `/etc/group`, `/etc/cron.d`), world-writable `/etc/shadow` privilege escalation, OpenSSL custom password hash injection, root account compromise | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%201/README.md) |
+| 2026-11-18 | Host & Network Penetration Testing: Post-Exploitation | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Windows OpenSSH Hydra password attack (`alice:princess1`), SAM registry / hashdump extraction, John the Ripper NTLM cracking (`david:orange`), SeImpersonatePrivilege exploitation via PrintSpoofer64, NT AUTHORITY\SYSTEM elevation | [Read Walkthrough](./eJPT/Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%202/README.md) |
 
 <br>
 

@@ -9,8 +9,8 @@
   <p><b>Platform:</b> INE Security | <b>Track:</b> Penetration Testing Student (eJPT v2)</p>
 
 [![Section - Host & Network Pentesting](https://img.shields.io/badge/Section-Host%20%26%20Network%20Pentesting-blue?style=flat-square&logo=target)](./README.md)
-[![Labs Completed](https://img.shields.io/badge/Completed-6%20Labs-success?style=flat-square&logo=checkmarx)](./README.md)
-[![Total Flags](https://img.shields.io/badge/Flags%20Captured-26%20%2F%2026-brightgreen?style=flat-square)](./README.md)
+[![Labs Completed](https://img.shields.io/badge/Completed-8%20Labs-success?style=flat-square&logo=checkmarx)](./README.md)
+[![Total Flags](https://img.shields.io/badge/Flags%20Captured-35%20%2F%2035-brightgreen?style=flat-square)](./README.md)
 </div>
 
 ---
@@ -38,6 +38,8 @@ This section covers offensive techniques and methodologies for compromising host
 | 2026-11-02 | The Metasploit Framework (MSF) | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Metasploit PostgreSQL DB integration, MSSQL CLR payload RCE (`mssql_clr_payload`), token privilege auditing (`SeImpersonatePrivilege`), PrintSpooler `getsystem` elevation, recursive System32 discovery | [Read Walkthrough](./The%20Metasploit%20Framework%20CTF1/README.md) |
 | 2026-11-03 | The Metasploit Framework (MSF) | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Unauthenticated RSYNC service enumeration & sensitive backup sync, Roxy-WI RCE (CVE-2022-31137), Meterpreter interactive command shell, /etc/cron.d scheduled task auditing | [Read Walkthrough](./The%20Metasploit%20Framework%20CTF%202/README.md) |
 | 2026-11-18 | Network Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 6 / 6 | Source port filter bypass (`Ncat -p 53`), SNMP community brute-force (`mngt`), SMB anonymous share enumeration, Hydra password attack (`svc_backup:chocolate`), SSH dynamic SOCKS pivoting (`-D 1080`), Proxychains internal file server compromise (`db_admin:Sql!Backup2024`) | [Read Walkthrough](./Network%20Based%20Attacks%20CTF%201/README.md) |
+| 2026-11-18 | Post-Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 5 / 5 | libssh Authentication Bypass (CVE-2018-10933), Linux local host enumeration (`/etc/passwd`, `/etc/group`, `/etc/cron.d`), world-writable `/etc/shadow` privilege escalation, OpenSSL custom password hash injection, root account compromise | [Read Walkthrough](./Post-Exploitation%20CTF%201/README.md) |
+| 2026-11-18 | Post-Exploitation | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Windows OpenSSH Hydra password attack (`alice:princess1`), SAM registry / hashdump extraction, John the Ripper NTLM cracking (`david:orange`), SeImpersonatePrivilege exploitation via PrintSpoofer64, NT AUTHORITY\SYSTEM elevation | [Read Walkthrough](./Post-Exploitation%20CTF%202/README.md) |
 
 <br>
 
