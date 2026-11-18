@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-10%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-41%20%2F%2041-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-11%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-47%20%2F%2047-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -30,9 +30,9 @@
 | **Learning Path** | **Penetration Testing Student (PTS)** |
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
 | **Active Sections** | **Section 2: Assessment Methodologies**, **Section 4: Host & Network Penetration Testing**, **Section 5: Web Application Penetration Testing** |
-| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Exploitation**, **The Metasploit Framework**, **Introduction to Web & HTTP** |
-| **Skill Checks Completed** | **10 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **41 / 41** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in HN Lab 4, 4 in HN Lab 5, 4 in WA Lab 1) |
+| **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Network Based Attacks**, **Exploitation**, **The Metasploit Framework**, **Introduction to Web & HTTP** |
+| **Skill Checks Completed** | **11 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **47 / 47** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in HN Lab 4, 4 in HN Lab 5, 6 in HN Lab 6, 4 in WA Lab 1) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -53,6 +53,7 @@
 | 2026-10-30 | Web Application Penetration Testing: Introduction to Web & HTTP | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Local File Inclusion / Path Traversal (`view_file?file=/flag.txt`), Gobuster directory fuzzing (`/secured/`), THC-Hydra HTTP POST login brute-force (`guest:butterfly1`), SQL Injection authentication bypass (`admin' OR 1=1-- -`) | [Walkthrough](./Web%20Application%20Penetration%20Testing/Web%20Application%20Penetration%20Testing%20CTF%201/README.md) |
 | 2026-11-02 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 1 (CTF 1) | Easy / Medium | 4 / 4 | Metasploit PostgreSQL DB integration, MSSQL CLR payload RCE (`mssql_clr_payload`), token privilege auditing (`SeImpersonatePrivilege`), PrintSpooler `getsystem` elevation, recursive System32 discovery | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF1/README.md) |
 | 2026-11-03 | Host & Network Penetration Testing: The Metasploit Framework (MSF) | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Unauthenticated RSYNC service enumeration & sensitive backup sync, Roxy-WI unauthenticated RCE (CVE-2022-31137), Meterpreter interactive command shell, /etc/cron.d scheduled task forensics | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/The%20Metasploit%20Framework%20CTF%202/README.md) |
+| 2026-11-18 | Host & Network Penetration Testing: Network Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 6 / 6 | Source port filter bypass (`Ncat -p 53`), SNMP community brute-force (`mngt`), SMB anonymous share enumeration, Hydra password attack (`svc_backup:chocolate`), SSH dynamic SOCKS pivoting (`-D 1080`), Proxychains internal file server compromise (`db_admin:Sql!Backup2024`) | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Network%20Based%20Attacks%20CTF%201/README.md) |
 
 <br>
 

@@ -9,8 +9,8 @@
 [![Platform - INE Security](https://img.shields.io/badge/Platform-INE%20Security-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification - eJPT v2](https://img.shields.io/badge/Certification-eJPT%20v2%20(PTS)-FF6F00?style=for-the-badge&logo=hackthebox&logoColor=white)](./eJPT/README.md)
 [![Certification - eWPT](https://img.shields.io/badge/Certification-eWPT-blueviolet?style=for-the-badge&logo=target&logoColor=white)](./eWPT/README.md)
-[![Labs Completed - 12 Labs](https://img.shields.io/badge/Labs%20Completed-12%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flags Captured - 54 / 54](https://img.shields.io/badge/Flags%20Captured-54%20%2F%2054-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Completed - 13 Labs](https://img.shields.io/badge/Labs%20Completed-13%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flags Captured - 60 / 60](https://img.shields.io/badge/Flags%20Captured-60%20%2F%2060-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Methodology - MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -52,7 +52,7 @@ The repository is organized into modular directories representing distinct certi
 
 | Certification Track | Platform / Learning Path | Status | Labs Completed | Flags Captured | Primary Focus | Directory Link |
 | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **10 Labs** | **41 / 41** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
+| **eJPT** | **Penetration Testing Student (PTS)** | 🟢 **Active** | **11 Labs** | **47 / 47** | Assessment methodologies, network recon, vulnerability analysis, host & network attacks, service exploitation | [📂 `eJPT/` Hub](./eJPT/README.md) |
 | **eCPPTv2** | **Penetration Testing Professional (PTP)** | 🟡 *Planned* | — | — | Network pivoting, Active Directory, system exploitation, privilege escalation, reporting | `eCPPTv2/` *(Upcoming)* |
 | **eWPT** | **Web Application Penetration Testing (WAPT)** | 🟢 **Active** | **2 Labs** | **13 / 13** | Web architectures, OWASP Top 10, SQLi, API testing, HTTP verbs, backup analysis | [📂 `eWPT/` Hub](./eWPT/README.md) |
 | **eCIR** | **Certified Incident Responder (CIR)** | 🟡 *Planned* | — | — | Threat detection, live host triage, memory analysis, log forensics, incident containment | `eCIR/` *(Upcoming)* |
