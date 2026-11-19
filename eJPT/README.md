@@ -14,8 +14,8 @@
 
 [![Learning Path](https://img.shields.io/badge/Learning%20Path-Penetration%20Testing%20Student%20(PTS)-0078D4?style=for-the-badge&logo=target&logoColor=white)](https://ine.com/)
 [![Certification](https://img.shields.io/badge/Certification-eJPT%20v2-orange?style=for-the-badge&logo=hackthebox&logoColor=white)](https://elearnsecurity.com/)
-[![Labs Status](https://img.shields.io/badge/Completed-13%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
-[![Flag Score](https://img.shields.io/badge/Flags%20Captured-56%20%2F%2056-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
+[![Labs Status](https://img.shields.io/badge/Completed-14%20Labs%20(100%25)-success?style=for-the-badge&logo=checkmarx&logoColor=white)](./README.md)
+[![Flag Score](https://img.shields.io/badge/Flags%20Captured-60%20%2F%2060-brightgreen?style=for-the-badge&logo=adblock&logoColor=white)](./README.md)
 [![Standards](https://img.shields.io/badge/Standards-MITRE%20ATT%26CK%20%7C%20CVSS%20v3.1-red?style=for-the-badge&logo=shield&logoColor=white)](https://attack.mitre.org/)
 
 </div>
@@ -31,8 +31,8 @@
 | **Target Certification** | **eJPT** (Junior Penetration Tester Certification) |
 | **Active Sections** | **Section 2: Assessment Methodologies**, **Section 4: Host & Network Penetration Testing**, **Section 5: Web Application Penetration Testing** |
 | **Active Courses** | **Information Gathering**, **Vulnerability Assessment**, **System/Host Based Attacks**, **Network Based Attacks**, **Exploitation**, **The Metasploit Framework**, **Post-Exploitation**, **Introduction to Web & HTTP** |
-| **Skill Checks Completed** | **13 Labs** (100% flag capture rate) |
-| **Total Flags Captured** | **56 / 56** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in HN Lab 4, 4 in HN Lab 5, 6 in HN Lab 6, 5 in HN Lab 7, 4 in HN Lab 8, 4 in WA Lab 1) |
+| **Skill Checks Completed** | **14 Labs** (100% flag capture rate) |
+| **Total Flags Captured** | **60 / 60** (5 in AM Lab 1, 4 in AM Lab 2, 4 in AM Lab 3, 4 in AM Lab 4, 4 in HN Lab 1, 4 in HN Lab 2, 4 in HN Lab 3, 4 in HN Lab 4, 4 in HN Lab 5, 6 in HN Lab 6, 5 in HN Lab 7, 4 in HN Lab 8, 4 in HN Lab 9, 4 in WA Lab 1) |
 | **Documentation Standards** | **MITRE ATT&CK® Enterprise** mapping, **CVSS v3.1** risk scoring, reproducible commands |
 
 <br>
@@ -56,6 +56,7 @@
 | 2026-11-18 | Host & Network Penetration Testing: Network Based Attacks | Skill Check Lab 1 (CTF 1) | Easy / Medium | 6 / 6 | Source port filter bypass (`Ncat -p 53`), SNMP community brute-force (`mngt`), SMB anonymous share enumeration, Hydra password attack (`svc_backup:chocolate`), SSH dynamic SOCKS pivoting (`-D 1080`), Proxychains internal file server compromise (`db_admin:Sql!Backup2024`) | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Network%20Based%20Attacks%20CTF%201/README.md) |
 | 2026-11-18 | Host & Network Penetration Testing: Post-Exploitation | Skill Check Lab 1 (CTF 1) | Easy / Medium | 5 / 5 | libssh Authentication Bypass (CVE-2018-10933), Linux local host enumeration (`/etc/passwd`, `/etc/group`, `/etc/cron.d`), world-writable `/etc/shadow` privilege escalation, OpenSSL custom password hash injection, root account compromise | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%201/README.md) |
 | 2026-11-18 | Host & Network Penetration Testing: Post-Exploitation | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | Windows OpenSSH Hydra password attack (`alice:princess1`), SAM registry / hashdump extraction, John the Ripper NTLM cracking (`david:orange`), SeImpersonatePrivilege exploitation via PrintSpoofer64, NT AUTHORITY\SYSTEM elevation | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Post-Exploitation%20CTF%202/README.md) |
+| 2026-11-19 | Host & Network Penetration Testing: Exploitation | Skill Check Lab 2 (CTF 2) | Easy / Medium | 4 / 4 | SMB dictionary attack (`tom`), NTLM hash dump harvesting & pass-the-hash (`nancy`), credential reuse on Microsoft FTP (`david:omnitrix_9901`), IIS webroot mapping, msfvenom ASPX webshell delivery, 64-bit Meterpreter reverse shell, C:\flag4.txt root compromise | [Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%202/README.md) |
 
 <br>
 
@@ -120,6 +121,12 @@
 - **Key Techniques:** FlatCore CMS 2.0.7 ACP authentication (`admin:password1`), authenticated arbitrary file upload exploit (`50262.py` / CVE-2021-39608) yielding interactive web shell (`www-data`), `/etc/passwd` enumeration, THC-Hydra dictionary attack cracking SSH credentials (`iamaweakuser:angel`), WordPress plugin enumeration discovering Duplicator 1.3.26, Metasploit arbitrary file read module (`auxiliary/scanner/http/wp_duplicator_file_read` / CVE-2020-11738) extracting `/flag3.txt` and `/etc/passwd`, and passwordless SSH compromise of account `iamacrazyfreeuser`.
 - **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
 - **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%201/README.md)
+
+#### Skill Check Lab 2 (CTF 2): SMB Password Spraying, NTLM Pass-the-Hash & FTP IIS Webshell Execution
+- **Scope:** `target.ine.local` (`WIN-M878Q9NE9S6` / `10.5.20.142` / `10.5.19.95`)
+- **Key Techniques:** Nmap service discovery identifying Windows Server 2012 R2 running Microsoft FTP Service (21/tcp), IIS 8.5 (80/tcp), and SMB (445/tcp), online SMB dictionary attack using Metasploit `auxiliary/scanner/smb/smb_login` with `unix_passwords.txt` cracking user `tom`, extracting Flag 1 and unencrypted NTLM hash dump `leaked-hashes.txt` from the `HRDocuments` share, spraying hashes against user `nancy` to uncover valid NTLM credentials (`aad3b435b51404eeaad3b435b51404ee:b3ddea4b4b957f3e037af75cfe5317ad`), connecting to `ITResources` via `smbclient` with `--pw-nt-hash` to recover Flag 2 and a plaintext credential hint (`david:omnitrix_9901`), authenticating to Microsoft FTP Service to discover FTP root mapped directly to IIS webroot (`C:\inetpub\wwwroot`), downloading Flag 3, generating 64-bit Windows Meterpreter reverse TCP ASPX payload (`msfvenom`), staging `payload.aspx` via FTP, triggering execution with `curl`, catching reverse shell via `multi/handler`, and recovering `C:\flag4.txt`.
+- **Flags Captured:** 4 of 4 (`FLAG1` to `FLAG4` MD5 hashes).
+- **Full Write-up:** [Read Walkthrough](./Host%20&%20Network%20Penetration%20Testing/Exploitation%20CTF%202/README.md)
 
 <br>
 
@@ -212,6 +219,7 @@ Official curriculum tracking directly aligned with the INE training portal:
   - [x] **Skill Check Lab 2** *(4/4 Flags Captured)*
 - [x] **Host & Network Penetration Testing: Exploitation** *(20h 49m | Alexis Ahmed)*
   - [x] **Skill Check Lab 1** *(4/4 Flags Captured)*
+  - [x] **Skill Check Lab 2** *(4/4 Flags Captured)*
 - [x] **Host & Network Penetration Testing: Post-Exploitation** *(26h 33m | Alexis Ahmed)*
   - [x] **Skill Check Lab 1** *(5/5 Flags Captured)*
   - [x] **Skill Check Lab 2** *(4/4 Flags Captured)*
